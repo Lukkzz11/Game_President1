@@ -1,0 +1,300 @@
+[
+  {
+    "id": "dossier_inflation_1",
+    "turn": 1,
+    "title": "Pressão Inflacionária & Política de Juros do Banco Central",
+    "source": "Banco Central da República",
+    "urgency": "critical",
+    "iconType": "inflation",
+    "description": "A inflação acumulada atingiu 12,4% ao ano e os preços dos alimentos básicos continuam subindo. O Comitê de Política Monetária (Copom) do Banco Central adverte que precisará subir os juros para 15% ao ano para conter o consumo, o que pode paralisar o crédito às empresas e retrair o PIB.",
+    "options": [
+      {
+        "id": "opt_support_hike",
+        "label": "Apoiar a alta dos juros pelo Banco Central",
+        "description": "Dar carta branca à autoridade monetária para esfriar a economia e priorizar o combate à inflação.",
+        "feedbackText": "Decisão publicada: O Banco Central elevou os juros. A inflação desacelera, mas o crédito encolhe e o setor empresarial protesta.",
+        "consequences": {
+          "inflationDelta": -1.5,
+          "gdpDelta": -0.6,
+          "popularityDelta": -3,
+          "socialGroupDelta": {
+            "grp_business": -6,
+            "grp_middle_class": -3,
+            "grp_informal": -4
+          },
+          "timelineTitle": "Banco Central eleva juros para conter inflação com apoio do Planalto",
+          "timelineCategory": "economic",
+          "timelineType": "warning"
+        }
+      },
+      {
+        "id": "opt_cut_spending",
+        "label": "Contingenciar R$ 4 bi em despesas dos Ministérios",
+        "description": "Promover corte seletivo em gastos da máquina pública para conter a demanda sem sufocar o crédito privado.",
+        "feedbackText": "Decreto de contingenciamento assinado: O governo reduz o déficit fiscal em R$ 4 bi. O mercado financeiro reage com alívio.",
+        "consequences": {
+          "inflationDelta": -1.0,
+          "budgetDelta": -4.0,
+          "popularityDelta": -1,
+          "socialGroupDelta": {
+            "grp_public_servants": -8,
+            "grp_middle_class": 2
+          },
+          "timelineTitle": "Governo contingencia R$ 4 bi em despesas discricionárias para estancar inflação",
+          "timelineCategory": "economic",
+          "timelineType": "positive"
+        }
+      },
+      {
+        "id": "opt_subsidize_food",
+        "label": "Instituir Subsídio Emergencial da Cesta Básica (R$ 3 bi)",
+        "description": "Usar recursos do Tesouro para desonerar e subsidiar alimentos essenciais às famílias de baixa renda.",
+        "feedbackText": "Programa emergencial instituído: Preço do arroz e óleo cai na ponta, garantindo apoio popular imediato, mas elevando o déficit.",
+        "consequences": {
+          "popularityDelta": 5,
+          "inflationDelta": -0.5,
+          "budgetDelta": 3.0,
+          "socialGroupDelta": {
+            "grp_poor": 8,
+            "grp_working_class": 6
+          },
+          "timelineTitle": "Subsídio emergencial à cesta básica aprovado para proteger famílias vulneráveis",
+          "timelineCategory": "reform",
+          "timelineType": "positive",
+          "delayedConsequenceTrigger": {
+            "title": "Passivo Fiscal do Subsídio Alimentar",
+            "description": "O custo de manutenção do subsídio à cesta básica pressiona o orçamento do segundo semestre.",
+            "turnsAhead": 1
+          }
+        }
+      },
+      {
+        "id": "opt_laissez_faire",
+        "label": "Manter neutralidade e não intervir na economia",
+        "description": "Evitar gastos públicos adicionais e esperar que as cadeias de fornecimento se ajustem autonomamente.",
+        "feedbackText": "Nenhuma medida intervencionista adotada: A inflação segue pressionando o bolso das famílias e sindicatos ameaçam protestos.",
+        "consequences": {
+          "popularityDelta": -4,
+          "socialGroupDelta": {
+            "grp_working_class": -6,
+            "grp_poor": -6
+          },
+          "timelineTitle": "Governo decide aguardar ajuste espontâneo de preços sem medidas fiscais",
+          "timelineCategory": "neutral",
+          "timelineType": "neutral"
+        }
+      }
+    ]
+  },
+  {
+    "id": "dossier_energy_1",
+    "turn": 1,
+    "title": "Crise nos Reservatórios Hidrelétricos & Ameaça de Tarifaço",
+    "source": "Ministério de Minas e Energia",
+    "urgency": "critical",
+    "iconType": "energy",
+    "description": "A pior seca em três décadas derrubou o volume das usinas hidrelétricas para 21% da capacidade. A Agência Reguladora anuncia que as contas de luz residenciais e industriais deverão subir 18% no próximo mês, gerando forte impacto inflacionário e revolta popular.",
+    "options": [
+      {
+        "id": "opt_subsidize_energy",
+        "label": "Subsidiar tarifas com aporte do Tesouro Nacional (R$ 4 bi)",
+        "description": "Cobrir o rombo das distribuidoras com verba federal para evitar que a população sofra com o aumento na conta de luz.",
+        "feedbackText": "Subvenção decretada: O governo absorveu o choque tarifário. A população comemora o congelamento, mas o déficit explode.",
+        "consequences": {
+          "popularityDelta": 6,
+          "budgetDelta": 4.0,
+          "inflationDelta": -0.8,
+          "socialGroupDelta": {
+            "grp_middle_class": 7,
+            "grp_poor": 6,
+            "grp_business": 4
+          },
+          "timelineTitle": "Subvenção federal impede alta de 18% nas tarifas de energia elétrica",
+          "timelineCategory": "crisis",
+          "timelineType": "positive",
+          "delayedConsequenceTrigger": {
+            "title": "Congresso cobra cortes após Rombo na Energia",
+            "description": "O subsídio de R$ 4 bi abriu rombo fiscal e líderes do Congresso exigem veto em emendas da saúde.",
+            "turnsAhead": 1
+          }
+        }
+      },
+      {
+        "id": "opt_rationing_bonus",
+        "label": "Decretar Plano Nacional de Metas de Economia de Energia",
+        "description": "Instituir bônus na fatura para quem reduzir o consumo em 15% e sobretaxa progressiva para desperdício.",
+        "feedbackText": "Metas de racionamento voluntário ativadas: O consumo caiu 11%, afastando o risco de apagão com custo fiscal praticamente nulo.",
+        "consequences": {
+          "popularityDelta": 1,
+          "gdpDelta": -0.3,
+          "socialGroupDelta": {
+            "grp_business": -3,
+            "grp_middle_class": -1
+          },
+          "timelineTitle": "Plano Nacional de Eficiência e Metas de Energia entra em vigor",
+          "timelineCategory": "crisis",
+          "timelineType": "neutral"
+        }
+      },
+      {
+        "id": "opt_activate_thermal",
+        "label": "Despachar Termelétricas a Carvão e Gás em Potência Máxima",
+        "description": "Garantir o suprimento contínuo de energia acionando térmicas caras e poluentes, com repasse parcial de 7% na tarifa.",
+        "feedbackText": "Térmicas fósseis ativadas: Suprimento garantido para as fábricas, mas a tarifa sobe 7% e ambientalistas promovem manifestações.",
+        "consequences": {
+          "popularityDelta": -2,
+          "inflationDelta": 0.4,
+          "socialGroupDelta": {
+            "grp_business": 5,
+            "grp_middle_class": -4
+          },
+          "timelineTitle": "Parque termelétrico ativado em capacidade máxima para conter apagão",
+          "timelineCategory": "crisis",
+          "timelineType": "warning"
+        }
+      },
+      {
+        "id": "opt_market_pass_through",
+        "label": "Autorizar repasse integral de 18% às tarifas de energia",
+        "description": "Preservar a integridade das contas públicas e deixar o consumidor arcar com o custo real da escassez.",
+        "feedbackText": "Tarifas reajustadas em 18%: O caixa público foi poupado, mas panelaços explodem nas grandes cidades e a inflação dá um salto.",
+        "consequences": {
+          "popularityDelta": -7,
+          "inflationDelta": 1.2,
+          "socialGroupDelta": {
+            "grp_middle_class": -9,
+            "grp_poor": -8,
+            "grp_business": -7
+          },
+          "timelineTitle": "Aumento de 18% nas contas de energia é repassado integralmente ao consumidor",
+          "timelineCategory": "crisis",
+          "timelineType": "negative"
+        }
+      }
+    ]
+  },
+  {
+    "id": "dossier_strike_1",
+    "turn": 1,
+    "title": "Ameaça de Greve Geral dos Transportes e Caminhoneiros",
+    "source": "Federação dos Sindicatos Nacionais de Carga e Transporte",
+    "urgency": "high",
+    "iconType": "strike",
+    "description": "Sindicatos de motoristas, metroviários e caminhoneiros autônomos aprovaram indicativo de paralisação nacional para daqui a 48 horas. Eles exigem desoneração temporária de tributos federais sobre o óleo diesel e reajuste salarial de 10%. Uma greve paralisaria o abastecimento de combustíveis e alimentos nas metrópoles.",
+    "options": [
+      {
+        "id": "opt_negotiate_diesel",
+        "label": "Conceder isenção temporária no diesel e mediar acordo salarial",
+        "description": "Desonerar o imposto de combustíveis em R$ 2.0 bi para destravar o acordo e evitar o caos nas estradas.",
+        "feedbackText": "Acordo assinado no Palácio do Planalto: A greve geral foi desmobilizada, garantindo paz nas estradas ao custo de R$ 2 bi em arrecadação.",
+        "consequences": {
+          "popularityDelta": 4,
+          "budgetDelta": 2.0,
+          "socialGroupDelta": {
+            "grp_working_class": 8,
+            "grp_informal": 5,
+            "grp_business": 4
+          },
+          "timelineTitle": "Acordo com líderes dos transportes desmobiliza greve geral após alívio no diesel",
+          "timelineCategory": "strike",
+          "timelineType": "positive"
+        }
+      },
+      {
+        "id": "opt_court_injunction",
+        "label": "Acionar a Justiça Federal com pedido de liminar e multa milionária",
+        "description": "Considerar a greve abusiva e pedir à Polícia Federal e Rodoviária que garantam o fluxo das rodovias.",
+        "feedbackText": "Liminar obtida na Justiça: Rodovias desobstruídas sob escolta policial. Parte da categoria desiste, mas lideranças sindicais prometem revanche.",
+        "consequences": {
+          "popularityDelta": -1,
+          "socialGroupDelta": {
+            "grp_working_class": -8,
+            "grp_business": 4,
+            "grp_middle_class": 3
+          },
+          "timelineTitle": "Justiça Federal decreta ilegalidade da greve dos transportes a pedido do governo",
+          "timelineCategory": "strike",
+          "timelineType": "warning"
+        }
+      },
+      {
+        "id": "opt_national_address",
+        "label": "Fazer pronunciamento à Nação pedindo espírito cívico e trégua",
+        "description": "Usar o capital político do Presidente na TV para sensibilizar os trabalhadores sobre o momento delicado do país.",
+        "feedbackText": "Pronunciamento exibido em rede nacional: A greve ocorre de forma parcial em algumas capitais, mas sem bloqueios graves nas rodovias.",
+        "consequences": {
+          "popularityDelta": 1,
+          "gdpDelta": -0.2,
+          "socialGroupDelta": {
+            "grp_working_class": -3,
+            "grp_middle_class": 2
+          },
+          "timelineTitle": "Presidente faz apelo à Nação na TV por trégua e pacto nos transportes",
+          "timelineCategory": "strike",
+          "timelineType": "neutral"
+        }
+      }
+    ]
+  },
+  {
+    "id": "dossier_congress_1",
+    "turn": 1,
+    "title": "Chantagem Parlamentar: Centrão cobra Emendas para Votar Projetos",
+    "source": "Liderança do Governo na Câmara dos Deputados",
+    "urgency": "medium",
+    "iconType": "congress",
+    "description": "O Presidente da Câmara e os líderes partidários do bloco parlamentar independente avisaram: as reformas econômicas estruturais e o orçamento não entrarão na pauta de votação sem a liberação de emendas parlamentares paroquiais para suas bases eleitorais.",
+    "options": [
+      {
+        "id": "opt_release_pork",
+        "label": "Liberar R$ 2.5 bi em emendas e garantir 45 votos na base aliada",
+        "description": "Ceder ao pragmatismo político tradicional para destravar as votações cruciais no Congresso.",
+        "feedbackText": "Emendas empenhadas: A bancada do Centrão adere à base de sustentação, garantindo maioria sólida, mas a imprensa denuncia o 'toma lá, dá cá'.",
+        "consequences": {
+          "budgetDelta": 2.5,
+          "congressSupportDelta": 45,
+          "popularityDelta": -2,
+          "socialGroupDelta": {
+            "grp_middle_class": -4
+          },
+          "timelineTitle": "Planalto formaliza acordo político com liberação de emendas parlamentares",
+          "timelineCategory": "pork",
+          "timelineType": "warning"
+        }
+      },
+      {
+        "id": "opt_appoint_secretaries",
+        "label": "Negociar apoio oferecendo secretarias regionais e cargos no Executivo",
+        "description": "Distribuir cargos comissionados de segundo escalão sem comprometer o orçamento fiscal com emendas diretas.",
+        "feedbackText": "Composição política pactuada: 25 deputados passam a votar com o governo após nomeações regionais de seus indicados.",
+        "consequences": {
+          "congressSupportDelta": 25,
+          "popularityDelta": 0,
+          "socialGroupDelta": {
+            "grp_public_servants": -3
+          },
+          "timelineTitle": "Acordo de coalizão acomoda bancadas regionais em postos do governo federal",
+          "timelineCategory": "congress",
+          "timelineType": "positive"
+        }
+      },
+      {
+        "id": "opt_defy_congress",
+        "label": "Rejeitar exigências e denunciar o fisiologismo na imprensa",
+        "description": "Bater o pé contra chantagens políticas e conclamar a população a pressionar os parlamentares nas redes sociais.",
+        "feedbackText": "Confronto aberto deflagrado: A popularidade do Presidente sobe pela postura ética, mas a Câmara paralisa a pauta de votações por semanas.",
+        "consequences": {
+          "popularityDelta": 5,
+          "congressSupportDelta": -35,
+          "socialGroupDelta": {
+            "grp_middle_class": 6,
+            "grp_public_servants": 3
+          },
+          "timelineTitle": "Presidente confronta exigências parlamentares e apela à pressão da opinião pública",
+          "timelineCategory": "congress",
+          "timelineType": "warning"
+        }
+      }
+    ]
+  }
+]

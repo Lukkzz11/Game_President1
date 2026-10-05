@@ -1,0 +1,30 @@
+[
+  {
+    "id": "press_gazeta",
+    "name": "Gazeta Financeira & Notícias",
+    "orientation": "liberal_market",
+    "credibility": 88,
+    "reach": 75
+  },
+  {
+    "id": "press_diario",
+    "name": "Diário da Nação",
+    "orientation": "center_popular",
+    "credibility": 82,
+    "reach": 90
+  },
+  {
+    "id": "press_tribuna",
+    "name": "A Tribuna do Povo",
+    "orientation": "labor_left",
+    "credibility": 74,
+    "reach": 68
+  },
+  {
+    "id": "press_patriota",
+    "name": "Arauto da Pátria",
+    "orientation": "national_conservative",
+    "credibility": 70,
+    "reach": 62
+  }
+]

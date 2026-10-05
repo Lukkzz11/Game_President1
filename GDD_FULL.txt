@@ -1,0 +1,1947 @@
+<USER_REQUEST>
+SIMULADOR POLÍTICO
+
+GDD + ESPECIFICAÇÃO DO PROTÓTIPO
+
+Documento para desenvolvimento no Antigravity com Next.js + TypeScript + IndexedDB.
+
+⸻
+
+1. VISÃO GERAL
+
+Criar um jogo de simulação política, econômica e social no qual o jogador cria um personagem político, participa de uma eleição, assume o governo e administra um país fictício.
+
+O jogador poderá:
+
+* criar seu próprio político;
+* criar ou escolher um partido;
+* definir suas posições políticas;
+* fazer campanha;
+* disputar eleições;
+* governar;
+* criar e modificar leis;
+* alterar impostos;
+* definir orçamento;
+* nomear ministros;
+* negociar com o Congresso;
+* lidar com Judiciário e instituições;
+* indicar ministros para o Supremo Tribunal;
+* criar programas sociais;
+* administrar empresas estatais;
+* lidar com empresas privadas;
+* desenvolver infraestrutura;
+* administrar cidades e regiões;
+* fazer política externa;
+* negociar comércio;
+* aumentar ou reduzir gastos militares;
+* participar de conflitos;
+* enfrentar crises;
+* combater ou permitir corrupção;
+* alterar a Constituição;
+* mudar o regime político;
+* enfrentar protestos, greves, escândalos e investigações;
+* tentar se reeleger;
+* deixar um legado político.
+
+O princípio central é:
+
+O jogador pode tentar fazer praticamente qualquer coisa dentro das regras do sistema. O jogo simula as consequências.
+
+Não existe uma ideologia obrigatoriamente correta.
+
+Toda escolha pode possuir:
+
+benefícios + custos + riscos + consequências políticas + consequências econômicas + consequências sociais.
+
+⸻
+
+2. UNIVERSO FICTÍCIO
+
+Todos os países, políticos, partidos, cidades, empresas e organizações devem ser fictícios.
+
+O nome do país ainda é provisório.
+
+Usar inicialmente:
+
+REPÚBLICA DE [NOME PROVISÓRIO]
+
+Não utilizar países reais como entidades do jogo.
+
+O universo deve ser estruturado para permitir posteriormente a criação de dezenas de países fictícios.
+
+⸻
+
+3. SITUAÇÃO INICIAL DO PAÍS
+
+O jogador começa em um país em situação problemática.
+
+Condições iniciais aproximadas:
+
+* população: 52 milhões;
+* inflação: 12,4%;
+* desemprego: 14,2%;
+* crescimento econômico: 0,5%;
+* dívida pública: 82% do PIB;
+* déficit público elevado;
+* corrupção elevada;
+* criminalidade elevada;
+* infraestrutura deteriorada;
+* saúde deficiente;
+* educação deficiente;
+* baixa confiança nas instituições;
+* baixa confiança no governo;
+* polarização política;
+* desigualdade elevada;
+* pobreza elevada;
+* crescimento baixo;
+* instabilidade política.
+
+Os números são apenas valores iniciais.
+
+O sistema deve ser construído para que todos esses indicadores possam mudar ao longo do jogo.
+
+⸻
+
+4. CRIAÇÃO DO PERSONAGEM
+
+O jogador cria:
+
+* nome;
+* idade;
+* descrição;
+* partido;
+* histórico político;
+* posições políticas;
+* eventualmente aparência no futuro.
+
+Estrutura:
+
+type Player = {
+  id: string;
+  name: string;
+  age: number;
+  description: string;
+  partyId: string;
+  ideology: Ideology;
+  politicalExperience: number;
+  popularity: number;
+  integrity: number;
+  competence: number;
+};
+
+⸻
+
+5. IDEOLOGIA
+
+Não utilizar simplesmente “esquerda/direita”.
+
+O jogador define posições independentes.
+
+Exemplos:
+
+* economia de mercado ↔ economia estatal;
+* Estado menor ↔ Estado maior;
+* impostos baixos ↔ impostos altos;
+* liberdade econômica ↔ regulamentação;
+* conservadorismo ↔ progressismo;
+* centralização ↔ descentralização;
+* autoridade ↔ liberdades civis;
+* nacionalismo ↔ internacionalismo;
+* privatização ↔ estatização;
+* livre comércio ↔ protecionismo;
+* intervenção estatal ↔ laissez-faire;
+* maior gasto social ↔ menor gasto social;
+* maior gasto militar ↔ menor gasto militar.
+
+O jogo calcula um perfil político aproximado.
+
+Exemplo:
+
+Perfil político
+Economia: liberal
+Estado: moderado
+Costumes: progressista
+Instituições: democrático
+Comércio: protecionista moderado
+Política externa: nacionalista
+
+A classificação não deve limitar o jogador.
+
+⸻
+
+6. PARTIDOS
+
+Criar partidos fictícios.
+
+Cada partido possui:
+
+* nome;
+* sigla;
+* ideologia;
+* popularidade;
+* número de cadeiras;
+* grupos sociais aliados;
+* financiamento;
+* influência;
+* posição sobre diferentes políticas.
+
+O jogador pode:
+
+* entrar em um partido;
+* sair;
+* criar seu próprio partido;
+* mudar a orientação do partido;
+* disputar liderança;
+* formar coalizões.
+
+⸻
+
+7. SISTEMA POLÍTICO
+
+O país deve possuir:
+
+* Presidente;
+* Congresso;
+* Poder Judiciário;
+* Supremo Tribunal;
+* Ministério Público;
+* Tribunal de Contas;
+* Banco Central;
+* autoridade eleitoral;
+* governos regionais;
+* prefeitos;
+* partidos;
+* imprensa;
+* grupos de interesse.
+
+Cada instituição possui:
+
+* poder;
+* independência;
+* confiança;
+* influência;
+* relação com o governo.
+
+O presidente não deve controlar tudo.
+
+⸻
+
+8. CONSTITUIÇÃO
+
+A Constituição é uma das estruturas centrais do jogo.
+
+Ela define as regras fundamentais do país.
+
+Exemplos:
+
+* sistema de governo;
+* duração do mandato;
+* limite de reeleição;
+* poderes presidenciais;
+* poderes do Congresso;
+* independência do Judiciário;
+* direitos civis;
+* sistema eleitoral;
+* regras de impostos;
+* autonomia regional;
+* poderes e independência do Banco Central;
+* composição do Supremo Tribunal;
+* duração do mandato dos ministros do Supremo;
+* processo de nomeação dos ministros;
+* necessidade ou não de aprovação do Congresso;
+* estado de emergência;
+* funcionamento das instituições;
+* processo legislativo;
+* regras para alteração constitucional.
+
+A Constituição deve ser um objeto de dados próprio e editável pelo sistema político.
+
+⸻
+
+9. SUPREMO TRIBUNAL
+
+O país possui um Supremo Tribunal com:
+
+11 ministros.
+
+Cada ministro possui informações como:
+
+* nome;
+* idade;
+* ideologia;
+* orientação jurídica;
+* independência;
+* experiência;
+* reputação;
+* integridade;
+* posição sobre diferentes temas;
+* data de nomeação;
+* data prevista de saída/aposentadoria;
+* presidente que o indicou.
+
+Estrutura inicial:
+
+type SupremeJustice = {
+  id: string;
+  name: string;
+  age: number;
+  ideology: number;
+  independence: number;
+  experience: number;
+  integrity: number;
+  reputation: number;
+  appointedBy: string;
+  appointmentDate: string;
+  retirementDate?: string;
+};
+
+O Supremo deve começar com 11 ministros.
+
+⸻
+
+10. VACÂNCIAS E INDICAÇÕES AO SUPREMO
+
+A composição do Supremo deve mudar ao longo do tempo.
+
+Quando um ministro:
+
+* se aposenta;
+* morre;
+* renuncia;
+* é removido conforme as regras constitucionais;
+
+surge uma vaga.
+
+O presidente poderá indicar um novo ministro, desde que a Constituição vigente permita essa indicação presidencial.
+
+No modelo padrão do protótipo:
+
+Ministro deixa o cargo
+        ↓
+Presidente recebe uma vaga
+        ↓
+Presidente escolhe candidato
+        ↓
+Candidato passa por análise
+        ↓
+Congresso vota a indicação
+        ↓
+Aprovado
+        ↓
+Novo ministro assume
+
+O sistema deverá permitir que uma Constituição futura tenha regras diferentes.
+
+Por exemplo:
+
+* aprovação simples do Congresso;
+* maioria absoluta;
+* maioria qualificada;
+* aprovação popular;
+* indicação por comissão;
+* indicação compartilhada entre poderes;
+* indicação direta pelo Executivo.
+
+⸻
+
+11. ESCOLHA DO MINISTRO
+
+Ao escolher um candidato, o jogador poderá avaliar:
+
+* competência;
+* experiência;
+* integridade;
+* independência;
+* ideologia;
+* posição sobre direitos civis;
+* posição sobre economia;
+* posição sobre segurança;
+* relação com o governo;
+* popularidade;
+* histórico profissional.
+
+Um candidato extremamente alinhado ao presidente pode:
+
+aumentar a chance de decisões favoráveis ao governo, mas pode:
+
+* gerar críticas;
+* reduzir confiança no Supremo;
+* enfrentar resistência no Congresso;
+* aumentar percepção de aparelhamento;
+* gerar reação da imprensa.
+
+Um candidato extremamente independente pode:
+
+* aumentar confiança institucional;
+* ser menos previsível para o presidente;
+* eventualmente votar contra políticas do governo.
+
+O jogo não deve tratar nenhuma dessas escolhas automaticamente como correta.
+
+⸻
+
+12. JULGAMENTOS DO SUPREMO
+
+O Supremo poderá analisar:
+
+* leis;
+* decretos;
+* alterações constitucionais;
+* decisões do Executivo;
+* conflitos entre instituições;
+* direitos civis;
+* eleições;
+* medidas de emergência;
+* atos do governo.
+
+Resultados possíveis:
+
+* constitucional;
+* inconstitucional;
+* parcialmente inconstitucional;
+* suspenso;
+* devolvido para correção;
+* mantido.
+
+⸻
+
+13. COMPOSIÇÃO IDEOLÓGICA DO SUPREMO
+
+Mostrar a composição atual dos 11 ministros.
+
+Exemplo:
+
+SUPREMO TRIBUNAL
+Progressistas       4
+Moderados            3
+Conservadores        3
+Independentes        1
+
+Essa composição deve influenciar probabilisticamente determinados julgamentos, mas não determinar automaticamente o resultado.
+
+Cada ministro deve possuir sua própria personalidade e posição.
+
+⸻
+
+14. NOVA CONSTITUIÇÃO
+
+O jogador poderá tentar criar uma nova Constituição.
+
+Isso NÃO deve ser apenas um botão.
+
+Deve existir um processo institucional.
+
+Exemplo inicial:
+
+Presidente propõe nova Constituição
+        ↓
+Debate público
+        ↓
+Votação popular / referendo
+        ↓
+Congresso
+        ↓
+Judiciário
+        ↓
+Executivo
+        ↓
+Nova Constituição entra em vigor
+
+Cada etapa poderá:
+
+* aprovar;
+* rejeitar;
+* modificar;
+* atrasar;
+* exigir alterações.
+
+O processo deverá respeitar as regras da Constituição vigente.
+
+Importante
+
+O jogo deve permitir que diferentes Constituições possuam processos diferentes.
+
+Por exemplo:
+
+Constituição A:
+
+Referendo → Congresso → Supremo → Executivo
+
+Constituição B:
+
+Congresso → Referendo → Executivo
+
+Constituição C:
+
+Assembleia Constituinte → Referendo → Supremo
+
+Isso permite que o próprio sistema político evolua.
+
+⸻
+
+15. ALTERAÇÕES CONSTITUCIONAIS
+
+Além de criar uma Constituição completamente nova, o jogador poderá tentar alterar pontos específicos.
+
+Exemplos:
+
+* aumentar mandato;
+* permitir reeleição;
+* retirar limite de reeleição;
+* modificar poderes presidenciais;
+* aumentar autonomia regional;
+* modificar sistema eleitoral;
+* alterar direitos;
+* criar novas instituições;
+* extinguir instituições;
+* mudar regras fiscais;
+* alterar poderes do Congresso;
+* alterar independência do Judiciário;
+* alterar composição do Supremo;
+* alterar regras de indicação dos ministros;
+* alterar duração dos mandatos dos ministros.
+
+Toda mudança deverá seguir o procedimento constitucional vigente.
+
+⸻
+
+16. LEIS
+
+Leis terão um processo completo.
+
+Exemplo:
+
+Proposta
+↓
+Comissão
+↓
+Debate
+↓
+Emendas
+↓
+Votação
+↓
+Aprovação ou rejeição
+↓
+Executivo
+↓
+Sanção ou veto
+↓
+Possível revisão judicial
+↓
+Implementação
+
+⸻
+
+17. CONGRESSO PODE ALTERAR AS LEIS
+
+Isso é obrigatório.
+
+Quando o presidente enviar uma lei, o Congresso poderá:
+
+* aprovar exatamente como está;
+* rejeitar;
+* adicionar artigos;
+* remover artigos;
+* alterar valores;
+* alterar prazos;
+* modificar beneficiários;
+* modificar orçamento;
+* mudar a aplicação da lei;
+* criar exceções;
+* substituir partes da proposta.
+
+Exemplo:
+
+Presidente envia:
+
+“Criar programa nacional de renda de 500 unidades monetárias.”
+
+Congresso pode devolver:
+
+“Programa de 350.”
+
+ou:
+
+“Apenas para famílias abaixo de determinada renda.”
+
+ou:
+
+“Programa de 500, mas durante apenas 12 meses.”
+
+ou:
+
+“Programa aprovado, mas com orçamento reduzido.”
+
+O jogador deverá decidir se:
+
+* aceita;
+* negocia;
+* retira;
+* veta quando permitido;
+* tenta aprovar outra versão.
+
+⸻
+
+18. NEGOCIAÇÃO POLÍTICA
+
+O jogador poderá negociar com parlamentares.
+
+Pode oferecer:
+
+* alterações no projeto;
+* investimentos regionais;
+* cargos;
+* alianças políticas;
+* apoio a outros projetos;
+* concessões políticas.
+
+Isso deverá afetar:
+
+* confiança;
+* popularidade;
+* corrupção percebida;
+* apoio no Congresso;
+* relação com partidos.
+
+Negociações ilícitas podem gerar investigações.
+
+⸻
+
+19. PODER EXECUTIVO
+
+Diferenciar:
+
+o que o presidente quer fazer
+
+de:
+
+o que o presidente possui poder legal para fazer.
+
+Algumas decisões:
+
+Executivo pode fazer diretamente.
+
+Outras:
+
+precisam do Congresso.
+
+Outras:
+
+precisam de aprovação popular.
+
+Outras:
+
+podem ser bloqueadas pelo Judiciário.
+
+O poder real do presidente depende da Constituição e das instituições.
+
+⸻
+
+20. ELEIÇÕES
+
+O jogo terá:
+
+* eleição presidencial;
+* eleição legislativa;
+* eleições regionais;
+* eleições municipais no futuro.
+
+Durante a eleição:
+
+* discursos;
+* debates;
+* propaganda;
+* alianças;
+* promessas;
+* ataques políticos;
+* crises;
+* escândalos;
+* pesquisas.
+
+As decisões anteriores do jogador afetam a eleição.
+
+⸻
+
+21. PESQUISAS
+
+Durante o governo mostrar:
+
+“Se a eleição fosse hoje…”
+
+Exemplo:
+
+Partido do Governo     34%
+Partido A              28%
+Partido B              21%
+Partido C              10%
+Outros                  7%
+
+A pesquisa reage a:
+
+* economia;
+* aprovação;
+* escândalos;
+* desemprego;
+* inflação;
+* crises;
+* notícias;
+* popularidade;
+* decisões do governo.
+
+⸻
+
+22. GOVERNO
+
+Mandato padrão:
+
+4 anos
+
+Cada turno:
+
+6 meses
+
+Total:
+
+8 turnos.
+
+A cada turno:
+
+1. jogador toma decisões;
+2. simulação processa;
+3. eventos acontecem;
+4. economia muda;
+5. opinião pública muda;
+6. Congresso reage;
+7. instituições reagem;
+8. relatório é produzido;
+9. passam-se 6 meses.
+
+⸻
+
+23. DASHBOARD
+
+Mostrar:
+
+Economia
+
+* PIB;
+* crescimento;
+* inflação;
+* desemprego;
+* dívida;
+* déficit/superávit;
+* arrecadação;
+* juros;
+* investimento.
+
+Sociedade
+
+* pobreza;
+* desigualdade;
+* qualidade de vida;
+* aprovação;
+* confiança institucional.
+
+Serviços
+
+* saúde;
+* educação;
+* segurança;
+* infraestrutura.
+
+Política
+
+* Congresso;
+* aprovação;
+* popularidade;
+* coalizão;
+* oposição.
+
+Instituições
+
+* confiança no Supremo;
+* independência judicial;
+* confiança no Congresso;
+* confiança no Executivo;
+* confiança no Banco Central.
+
+⸻
+
+24. GRUPOS SOCIAIS
+
+Criar:
+
+* trabalhadores;
+* empresários;
+* classe média;
+* jovens;
+* idosos;
+* agricultores;
+* servidores públicos;
+* sindicatos;
+* profissionais liberais;
+* população de baixa renda;
+* população de alta renda;
+* moradores urbanos;
+* moradores rurais.
+
+Cada grupo possui:
+
+* população;
+* renda;
+* preferências;
+* aprovação;
+* influência;
+* interesses.
+
+⸻
+
+25. GRUPOS DE INTERESSE E LOBBY
+
+Criar:
+
+* sindicatos;
+* associações empresariais;
+* grandes empresas;
+* bancos;
+* agricultores;
+* militares;
+* movimentos sociais;
+* ambientalistas;
+* organizações civis;
+* grupos religiosos;
+* organizações trabalhistas.
+
+Eles podem:
+
+* pressionar;
+* fazer lobby;
+* apoiar candidatos;
+* financiar campanhas;
+* organizar protestos;
+* negociar;
+* retirar apoio.
+
+⸻
+
+26. ECONOMIA
+
+A economia deverá futuramente possuir relações entre:
+
+Impostos
+↓
+Consumo
+↓
+Produção
+↓
+Emprego
+↓
+Salários
+↓
+Inflação
+↓
+Juros
+↓
+Investimento
+↓
+PIB
+
+Não é necessário criar uma economia perfeita no primeiro protótipo, mas a arquitetura deve permitir sua expansão.
+
+⸻
+
+27. BANCO CENTRAL
+
+Criar Banco Central como instituição independente.
+
+Poderá:
+
+* aumentar juros;
+* reduzir juros;
+* controlar inflação;
+* administrar política monetária;
+* reagir a crises.
+
+A independência do Banco Central poderá variar de acordo com a Constituição e decisões políticas.
+
+⸻
+
+28. IMPOSTOS
+
+Inicialmente:
+
+* imposto de renda;
+* imposto corporativo;
+* imposto sobre consumo;
+* imposto sobre combustível;
+* imposto sobre patrimônio;
+* imposto de importação.
+
+O jogador poderá alterar as taxas.
+
+As mudanças afetam:
+
+* arrecadação;
+* consumo;
+* investimento;
+* aprovação;
+* inflação;
+* empresas;
+* emprego.
+
+⸻
+
+29. ORÇAMENTO
+
+Categorias:
+
+* saúde;
+* educação;
+* segurança;
+* defesa;
+* infraestrutura;
+* ciência e tecnologia;
+* assistência social;
+* transporte;
+* meio ambiente;
+* agricultura;
+* indústria;
+* administração.
+
+Mostrar:
+
+Receita
+Despesas
+Déficit
+Superávit
+Dívida
+
+⸻
+
+30. PROGRAMAS SOCIAIS
+
+Permitir criação de programas.
+
+Configurações:
+
+* nome;
+* valor;
+* beneficiários;
+* critérios;
+* duração;
+* orçamento.
+
+Efeitos:
+
+* pobreza;
+* consumo;
+* desigualdade;
+* aprovação;
+* gasto público.
+
+⸻
+
+31. EMPRESAS
+
+Criar sistema econômico de empresas.
+
+Categorias:
+
+* pequenas;
+* médias;
+* grandes;
+* multinacionais;
+* estatais;
+* bancos.
+
+Setores:
+
+* agricultura;
+* indústria;
+* energia;
+* mineração;
+* tecnologia;
+* construção;
+* comércio;
+* serviços.
+
+Empresas afetam:
+
+* emprego;
+* PIB;
+* arrecadação;
+* investimento;
+* exportações;
+* lobby.
+
+⸻
+
+32. INFRAESTRUTURA
+
+Categorias:
+
+* rodovias;
+* ferrovias;
+* portos;
+* aeroportos;
+* energia;
+* água;
+* saneamento;
+* internet;
+* transporte público.
+
+Infraestrutura possui qualidade e capacidade.
+
+Investimentos levam tempo para produzir resultados.
+
+⸻
+
+33. CIDADES E REGIÕES
+
+O país possui estados/regiões e cidades fictícias.
+
+Cada região possui:
+
+* população;
+* economia;
+* infraestrutura;
+* criminalidade;
+* saúde;
+* educação;
+* política;
+* recursos.
+
+O governo poderá investir em regiões específicas.
+
+⸻
+
+34. POPULAÇÃO DINÂMICA
+
+A população deve futuramente possuir:
+
+* idade;
+* renda;
+* profissão;
+* escolaridade;
+* região;
+* situação de emprego.
+
+Também:
+
+* natalidade;
+* mortalidade;
+* migração;
+* urbanização.
+
+A população muda ao longo dos anos.
+
+⸻
+
+35. SAÚDE
+
+Indicadores:
+
+* expectativa de vida;
+* mortalidade;
+* cobertura;
+* hospitais;
+* médicos;
+* vacinação;
+* qualidade do atendimento.
+
+⸻
+
+36. EDUCAÇÃO
+
+Indicadores:
+
+* alfabetização;
+* ensino básico;
+* ensino superior;
+* qualidade;
+* investimento;
+* formação profissional;
+* pesquisa.
+
+⸻
+
+37. CRIMINALIDADE
+
+Não utilizar apenas uma estatística.
+
+Categorias:
+
+* homicídio;
+* roubo;
+* furto;
+* crime organizado;
+* corrupção;
+* fraude;
+* crime financeiro;
+* tráfico;
+* crime ambiental;
+* violência doméstica;
+* cybercrime.
+
+O governo poderá responder com:
+
+* polícia;
+* investigação;
+* Justiça;
+* prevenção;
+* educação;
+* urbanização;
+* tecnologia;
+* políticas sociais;
+* sistema prisional.
+
+⸻
+
+38. JUSTIÇA
+
+Instituições:
+
+* Supremo Tribunal;
+* tribunais;
+* Ministério Público;
+* polícia;
+* defensorias;
+* sistema prisional.
+
+O Judiciário poderá:
+
+* aceitar;
+* rejeitar;
+* suspender;
+* declarar inconstitucional uma lei.
+
+A independência judicial será variável.
+
+O Supremo possuirá 11 ministros, com composição dinâmica.
+
+⸻
+
+39. CORRUPÇÃO
+
+Criar sistema de:
+
+* auditorias;
+* transparência;
+* controle;
+* investigação;
+* proteção a denunciantes;
+* monitoramento de patrimônio;
+* financiamento político;
+* digitalização;
+* combate a contratos fraudulentos.
+
+O jogador também poderá ser investigado.
+
+⸻
+
+40. MINISTROS
+
+Ministros terão:
+
+* competência;
+* lealdade;
+* popularidade;
+* integridade;
+* experiência;
+* ideologia.
+
+O jogador poderá:
+
+* nomear;
+* demitir;
+* substituir;
+* promover;
+* proteger;
+* investigar.
+
+Ministros podem:
+
+* gerar resultados;
+* cometer corrupção;
+* gerar escândalos;
+* discordar do presidente;
+* renunciar.
+
+⸻
+
+41. IMPRENSA
+
+Criar jornais e canais fictícios.
+
+Cada veículo possui:
+
+* orientação;
+* credibilidade;
+* audiência;
+* interesses.
+
+O mesmo acontecimento pode ser apresentado de formas diferentes.
+
+Exemplo:
+
+Jornal A:
+"Governo consegue reduzir desemprego."
+Jornal B:
+"Redução do desemprego não convence especialistas."
+Jornal C:
+"Governo manipula números para melhorar imagem."
+
+A imprensa afeta opinião pública.
+
+⸻
+
+42. PROTESTOS E MOVIMENTOS
+
+Podem ocorrer:
+
+* manifestações;
+* greves;
+* protestos;
+* ocupações;
+* movimentos sociais;
+* revoltas regionais.
+
+O jogador pode:
+
+* negociar;
+* ignorar;
+* conceder;
+* reprimir;
+* declarar emergência;
+* dialogar;
+* criar medidas.
+
+Cada resposta possui consequências.
+
+⸻
+
+43. INVESTIGAÇÕES E ESCÂNDALOS
+
+Podem surgir:
+
+* corrupção;
+* fraude;
+* contratos suspeitos;
+* desvio;
+* abuso de poder;
+* financiamento ilegal;
+* irregularidades eleitorais.
+
+As investigações podem atingir:
+
+* ministros;
+* parlamentares;
+* funcionários;
+* empresários;
+* aliados;
+* oposição;
+* o próprio presidente.
+
+⸻
+
+44. CONSEQUÊNCIAS DE LONGO PRAZO
+
+Decisões não devem produzir apenas efeitos imediatos.
+
+Exemplo:
+
+Ano 1:
+
+cortar investimento em infraestrutura.
+
+Ano 2:
+
+economia fiscal.
+
+Ano 3:
+
+estradas começam a deteriorar.
+
+Ano 4:
+
+custos logísticos aumentam.
+
+Ano 5:
+
+indústria perde competitividade.
+
+O jogo deve possuir consequências atrasadas.
+
+⸻
+
+45. TECNOLOGIA E CIÊNCIA
+
+Investimentos:
+
+* IA;
+* computação;
+* medicina;
+* energia;
+* agricultura;
+* indústria;
+* defesa;
+* biotecnologia;
+* espaço;
+* universidades.
+
+Resultados podem demorar anos.
+
+⸻
+
+46. POLÍTICA EXTERNA
+
+Criar países fictícios.
+
+Cada país possui:
+
+* população;
+* economia;
+* governo;
+* ideologia;
+* recursos;
+* forças armadas;
+* relações diplomáticas.
+
+O jogador poderá:
+
+* negociar;
+* fazer tratados;
+* criar alianças;
+* estabelecer comércio;
+* impor sanções;
+* receber ajuda;
+* enviar ajuda;
+* negociar tecnologia;
+* negociar recursos.
+
+⸻
+
+47. COMÉRCIO INTERNACIONAL
+
+Produtos:
+
+* alimentos;
+* energia;
+* petróleo;
+* minerais;
+* tecnologia;
+* produtos industriais;
+* serviços.
+
+Importações e exportações afetam:
+
+* preços;
+* inflação;
+* emprego;
+* PIB;
+* moeda;
+* arrecadação.
+
+⸻
+
+48. MILITAR
+
+O jogador poderá:
+
+* aumentar defesa;
+* reduzir defesa;
+* modernizar forças armadas;
+* comprar equipamentos;
+* desenvolver tecnologia;
+* formar alianças;
+* enviar tropas;
+* participar de conflitos.
+
+Conflitos possuem consequências:
+
+* gastos;
+* mortes;
+* aprovação;
+* sanções;
+* comércio;
+* diplomacia;
+* instabilidade.
+
+⸻
+
+49. MUDANÇA DE REGIME
+
+O jogo deve permitir mudanças políticas profundas.
+
+Possibilidades:
+
+* democracia;
+* democracia mais centralizada;
+* parlamentarismo;
+* presidencialismo;
+* monarquia;
+* autoritarismo;
+* ditadura;
+* democratização.
+
+O jogador poderá tentar concentrar poder.
+
+Porém isso pode gerar:
+
+* protestos;
+* resistência;
+* oposição;
+* crises institucionais;
+* sanções internacionais;
+* isolamento;
+* revoltas;
+* perda de apoio;
+* tentativas de derrubar o governo;
+* conflitos internos.
+
+O jogo não deve simplesmente impedir o jogador.
+
+Ele deve simular as consequências.
+
+⸻
+
+50. CRISES
+
+Possíveis crises:
+
+* recessão;
+* inflação;
+* pandemia fictícia;
+* desastre natural;
+* crise energética;
+* crise alimentar;
+* escândalo;
+* guerra;
+* crise diplomática;
+* ataque cibernético;
+* falência de empresa;
+* crise bancária.
+
+⸻
+
+51. NOTÍCIAS E EVENTOS
+
+Cada turno poderá gerar eventos.
+
+Eventos devem possuir:
+
+* descrição;
+* causas;
+* opções;
+* consequências;
+* duração;
+* possibilidade de consequências futuras.
+
+Eventos podem estar ligados a decisões antigas.
+
+⸻
+
+52. HISTÓRICO DO GOVERNO
+
+Guardar tudo que aconteceu.
+
+Ao final do mandato:
+
+GOVERNO 2026–2030
+PIB:
+Inicial → Final
+Inflação:
+Inicial → Final
+Desemprego:
+Inicial → Final
+Dívida:
+Inicial → Final
+Aprovação:
+Inicial → Final
+Leis aprovadas:
+XX
+Ministros:
+XX
+Ministros do Supremo indicados:
+XX
+Crises:
+XX
+Escândalos:
+XX
+Conflitos:
+XX
+
+Criar uma espécie de biografia política do jogador.
+
+⸻
+
+53. OBJETIVOS
+
+Não existir apenas uma condição de vitória.
+
+O jogador poderá construir objetivos diferentes.
+
+Exemplos:
+
+Desenvolvimentista
+
+Transformar o país em potência industrial.
+
+Social
+
+Reduzir pobreza e desigualdade.
+
+Liberal
+
+Reduzir impostos e tamanho do Estado.
+
+Nacionalista
+
+Aumentar independência econômica e militar.
+
+Militar
+
+Transformar o país em potência militar.
+
+Democrático
+
+Fortalecer instituições e democracia.
+
+Autoritário
+
+Concentrar poder e alterar o regime.
+
+Os objetivos não devem determinar uma única estratégia correta.
+
+⸻
+
+54. PRINCÍPIO DE SIMULAÇÃO
+
+O jogo nunca deve dizer:
+
+“Essa decisão é boa.”
+
+Deve mostrar:
+
+“Essa decisão possui estas consequências.”
+
+Exemplo:
+
+Aumentar imposto:
+
+Possíveis benefícios
+
+* mais arrecadação;
+* menor déficit;
+* maior capacidade de investimento.
+
+Possíveis custos
+
+* menor consumo;
+* menor investimento;
+* queda de popularidade;
+* resistência empresarial.
+
+⸻
+
+55. PROTÓTIPO
+
+Não implementar todos os sistemas acima imediatamente.
+
+O primeiro protótipo deve implementar de verdade:
+
+1. criação do personagem;
+2. partido;
+3. ideologia;
+4. campanha;
+5. eleição;
+6. governo;
+7. dashboard;
+8. impostos;
+9. orçamento;
+10. programas sociais;
+11. Congresso;
+12. leis;
+13. emendas do Congresso;
+14. ministros;
+15. Supremo Tribunal com 11 ministros;
+16. indicação e substituição de ministros do Supremo;
+17. passagem de 6 meses;
+18. relatório;
+19. aprovação;
+20. grupos sociais;
+21. eventos;
+22. Constituição básica;
+23. sistema básico de alteração constitucional;
+24. save/load.
+
+Os demais sistemas devem ter arquitetura preparada para expansão.
+
+⸻
+
+56. STACK
+
+Utilizar:
+
+* Next.js;
+* TypeScript;
+* React;
+* App Router;
+* IndexedDB;
+* JSON/TypeScript para dados estáticos.
+
+Pode utilizar Dexie para IndexedDB.
+
+Não utilizar:
+
+* Firebase;
+* SQL;
+* autenticação;
+* multiplayer;
+* backend complexo;
+* 3D.
+
+⸻
+
+57. ESTRUTURA DO PROJETO
+
+Estrutura aproximada:
+
+src/
+├── app/
+│   ├── page.tsx
+│   ├── new-game/
+│   ├── character/
+│   ├── campaign/
+│   ├── election/
+│   ├── government/
+│   ├── constitution/
+│   ├── congress/
+│   └── supreme-court/
+│
+├── components/
+│   ├── ui/
+│   ├── dashboard/
+│   ├── politics/
+│   ├── institutions/
+│   └── game/
+│
+├── game/
+│   ├── engine/
+│   ├── state/
+│   ├── systems/
+│   ├── simulation/
+│   └── types/
+│
+├── database/
+│   ├── db.ts
+│   ├── saveGame.ts
+│   └── loadGame.ts
+│
+├── data/
+│   ├── country.json
+│   ├── parties.json
+│   ├── cities.json
+│   ├── countries.json
+│   ├── events.json
+│   ├── institutions.json
+│   └── supreme-court.json
+│
+└── lib/
+
+A estrutura pode ser adaptada se houver uma solução melhor.
+
+⸻
+
+58. GAME STATE
+
+Criar um estado central:
+
+type GameState = {
+  player: Player;
+  country: Country;
+  party: Party;
+  ideology: Ideology;
+  economy: Economy;
+  budget: Budget;
+  taxes: Tax[];
+  congress: Congress;
+  ministers: Minister[];
+  supremeCourt: {
+    justices: SupremeJustice[];
+    vacancies: number;
+    pendingAppointments: SupremeJusticeCandidate[];
+  };
+  socialGroups: SocialGroup[];
+  laws: Law[];
+  constitution: Constitution;
+  events: GameEvent[];
+  news: News[];
+  currentDate: string;
+  turn: number;
+  phase: GamePhase;
+};
+
+O tipo pode ser expandido conforme novos sistemas forem implementados.
+
+⸻
+
+59. MOTOR DE SIMULAÇÃO
+
+Criar funções independentes:
+
+simulateEconomy()
+simulateApproval()
+simulateCongress()
+simulateSocialGroups()
+simulateGovernment()
+simulateInstitutions()
+simulateSupremeCourt()
+simulateEvents()
+simulateNews()
+advanceTurn()
+
+A função central:
+
+advanceTurn(gameState)
+
+deve processar o semestre.
+
+O React não deve conter as regras econômicas e políticas diretamente.
+
+⸻
+
+60. SAVE GAME
+
+Utilizar IndexedDB.
+
+Salvar:
+
+* personagem;
+* partido;
+* ideologia;
+* economia;
+* orçamento;
+* impostos;
+* Congresso;
+* ministros;
+* ministros do Supremo;
+* vagas do Supremo;
+* indicações pendentes;
+* leis;
+* Constituição;
+* aprovação;
+* grupos sociais;
+* eventos;
+* notícias;
+* histórico;
+* data;
+* turno;
+* fase do jogo.
+
+O jogador deve conseguir:
+
+Novo jogo → jogar → salvar → fechar navegador → abrir → continuar exatamente de onde parou.
+
+⸻
+
+61. PRIMEIRO FLUXO JOGÁVEL
+
+O fluxo inicial deve ser:
+
+Tela inicial
+↓
+Novo jogo
+↓
+Criar personagem
+↓
+Escolher/criar partido
+↓
+Definir ideologia
+↓
+Campanha
+↓
+Eleição
+↓
+Resultado
+↓
+Formação do governo
+↓
+Dashboard
+↓
+Decisões
+↓
+Congresso
+↓
+Supremo
+↓
+Passar 6 meses
+↓
+Relatório
+↓
+Novo turno
+
+Durante o governo, quando houver uma vaga no Supremo:
+
+Vaga aberta
+↓
+Presidente escolhe candidato
+↓
+Congresso analisa
+↓
+Aprovação/rejeição
+↓
+Novo ministro assume
+
+⸻
+
+62. DESIGN
+
+Visual de jogo de estratégia/simulação.
+
+Priorizar:
+
+* dashboard;
+* indicadores;
+* gráficos;
+* tabelas;
+* cards;
+* menu lateral;
+* notícias;
+* histórico;
+* instituições;
+* composição do Congresso;
+* composição do Supremo.
+
+Não fazer visual de site corporativo.
+
+Primeiro:
+
+funcionalidade > estética.
+
+⸻
+
+63. REGRAS DE DESENVOLVIMENTO
+
+1. Não colocar toda a lógica em um único arquivo.
+2. Não espalhar números aleatórios pelos componentes.
+3. Centralizar os tipos TypeScript.
+4. Separar dados estáticos do save.
+5. Separar simulação da interface.
+6. Criar sistemas modulares.
+7. Evitar código que impeça expansão futura.
+8. Não implementar sistemas gigantes de uma vez.
+9. Fazer o fluxo principal funcionar primeiro.
+10. Sempre testar o jogo depois de implementar cada sistema importante.
+11. Não transformar o Supremo em apenas um número de aprovação.
+12. Cada ministro deve possuir dados próprios.
+13. As decisões do Supremo devem poder ser diferentes entre ministros.
+14. A composição do Supremo deve mudar com o tempo.
+15. A Constituição deve determinar as regras institucionais sempre que possível.
+
+⸻
+
+64. CRITÉRIO DE CONCLUSÃO DO PRIMEIRO PROTÓTIPO
+
+O protótipo será considerado funcional quando o jogador conseguir:
+
+1. Abrir o jogo.
+2. Criar personagem.
+3. Criar/escolher partido.
+4. Definir ideologia.
+5. Fazer campanha.
+6. Disputar eleição.
+7. Vencer.
+8. Formar governo.
+9. Nomear ministros.
+10. Alterar impostos.
+11. Alterar orçamento.
+12. Criar programa social.
+13. Propor lei.
+14. Ver o Congresso modificar a lei.
+15. Votar a lei.
+16. Enviar ao Executivo.
+17. Passar 6 meses.
+18. Receber relatório.
+19. Ver consequências.
+20. Acompanhar o Supremo Tribunal.
+21. Ver os 11 ministros.
+22. Receber uma vaga quando um ministro deixar o cargo.
+23. Indicar um novo ministro.
+24. Passar pelo processo de aprovação previsto.
+25. Nomear o novo ministro quando aprovado.
+26. Salvar.
+27. Fechar/reabrir.
+28. Continuar a partida.
+29. Iniciar um processo de alteração constitucional.
+30. Passar pelas etapas institucionais exigidas pela Constituição vigente.
+
+⸻
+
+65. PRIMEIRA TAREFA DO ANTIGRAVITY
+
+Antes de implementar sistemas futuros:
+
+1. Analise todo este documento.
+2. Crie o projeto Next.js + TypeScript.
+3. Crie a estrutura de pastas.
+4. Crie os tipos fundamentais.
+5. Crie GameState.
+6. Configure IndexedDB.
+7. Crie os dados iniciais.
+8. Crie o motor de simulação.
+9. Crie as telas do fluxo principal.
+10. Crie o primeiro sistema de Constituição.
+11. Crie o sistema básico do Supremo Tribunal.
+12. Crie os 11 ministros iniciais.
+13. Crie o sistema de aposentadoria/vacância.
+14. Crie o sistema de indicação presidencial.
+15. Crie o processo de aprovação da indicação.
+16. Crie o primeiro sistema de leis.
+17. Crie o Congresso com capacidade de alterar projetos.
+18. Implemente save/load.
+19. Execute e teste a aplicação.
+20. Corrija erros encontrados.
+
+Não quero apenas uma descrição do que deveria ser feito.
+
+Implemente a aplicação.
+
+Quando concluir uma etapa importante, informe:
+
+* o que foi implementado;
+* quais arquivos foram criados/modificados;
+* como testar;
+* quais partes ainda são simplificadas.
+
+Não implemente sistemas futuros antes de o fluxo principal estar funcionando.
+
+⸻
+
+PRINCÍPIO FUNDAMENTAL DO JOGO
+
+O jogador deve poder dizer:
+
+“Eu quero fazer isso.”
+
+E o jogo deve responder:
+
+“Você pode tentar. Agora vamos ver o que acontece.”
+
+Nenhuma ideologia deve possuir uma vitória automática.
+
+Nenhuma decisão deve ser classificada simplesmente como “boa” ou “ruim”.
+
+O mundo deve reagir às decisões do jogador de maneira dinâmica e coerente.
+
+O objetivo é criar um simulador político, não um jogo que ensina ao jogador qual sistema político ele deve escolher.
+
+SEMPRE RESPONDA EM PT_BR
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-04T14:54:23-03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Gemini 3.8 Flash (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>

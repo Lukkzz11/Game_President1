@@ -1,0 +1,258 @@
+[
+  {
+    "id": "law_basic_income",
+    "title": "Programa Nacional de Renda Básica Cidadã",
+    "category": "social",
+    "description": "Institui transferência mensal direta de renda para famílias em extrema vulnerabilidade social para erradicar a fome imediata.",
+    "costPerYear": 18.0,
+    "originalCost": 18.0,
+    "popularityImpact": 15,
+    "economicImpactSummary": "Aumenta o consumo de bens básicos imediatos, mas exige financiamento fiscal ou ampliação do déficit público.",
+    "socialImpactSummary": "Redução acentuada dos índices de miséria extrema e melhora nutricional infantil.",
+    "judicialReviewRisk": 10,
+    "possibleAmendments": [
+      {
+        "id": "amend_bi_1",
+        "description": "Bancada Fiscalista: Reduz o valor mensal em 30% e limita o benefício a no máximo 2 anos para evitar dependência fiscal.",
+        "impactSummary": "Custo anual cai para 12.5 bi (-30%), mas aprovação popular sobe menos (+8%).",
+        "budgetChangeModifier": 0.7,
+        "effectivenessModifier": 0.75,
+        "approvalChanceModifier": 45
+      },
+      {
+        "id": "amend_bi_2",
+        "description": "Bancada Social: Adiciona exigência de frequência escolar obrigatória de 85% e vacinação completa para os filhos.",
+        "impactSummary": "Custo inalterado, eleva o apoio da classe média e melhora índices educacionais a médio prazo.",
+        "budgetChangeModifier": 1.0,
+        "effectivenessModifier": 1.2,
+        "approvalChanceModifier": 35
+      }
+    ]
+  },
+  {
+    "id": "law_fiscal_responsibility",
+    "title": "Marco da Disciplina Fiscal e Limite de Gastos",
+    "category": "economic",
+    "description": "Impõe teto rígido para o crescimento das despesas públicas atrelado à inflação e veda aumento de despesa obrigatória com folha em anos de déficit.",
+    "costPerYear": -8.5,
+    "originalCost": -8.5,
+    "popularityImpact": -8,
+    "economicImpactSummary": "Reduz o prêmio de risco-país, ancora expectativas de inflação e permite queda consistente da taxa de juros.",
+    "socialImpactSummary": "Congela investimentos em áreas sociais e gera descontentamento imediato de sindicatos e servidores.",
+    "judicialReviewRisk": 40,
+    "possibleAmendments": [
+      {
+        "id": "amend_fisc_1",
+        "description": "Bancada de Saúde e Educação: Exclui expressamente os pisos constitucionais de Saúde e Educação do teto de gastos.",
+        "impactSummary": "Economia fiscal reduzida para -4.5 bi, mas viabiliza aprovação ampla e diminui risco de greves.",
+        "budgetChangeModifier": 0.55,
+        "effectivenessModifier": 0.8,
+        "approvalChanceModifier": 55
+      }
+    ]
+  },
+  {
+    "id": "law_tax_reform",
+    "title": "Reforma Tributária e Criação do IVA Nacional",
+    "category": "economic",
+    "description": "Unifica 5 impostos cumulativos sobre consumo num único Imposto sobre Valor Agregado com alíquota transparente e não-cumulativa.",
+    "costPerYear": 0.0,
+    "originalCost": 0.0,
+    "popularityImpact": 10,
+    "economicImpactSummary": "Elimina a guerra fiscal interestadual, reduz custos de conformidade das empresas e projeta alta de 1.8% no PIB em 3 anos.",
+    "socialImpactSummary": "Preços de alimentos básicos ficam mais transparentes; desonera produtos da cesta básica familiar.",
+    "judicialReviewRisk": 35,
+    "possibleAmendments": [
+      {
+        "id": "amend_tax_1",
+        "description": "Jabuti do Centrão: Cria regime tributário favorecido de alíquota zero para armas, refrigerantes e agrotóxicos.",
+        "impactSummary": "Reduz arrecadação em R$ 4 bi, mas conquista o apoio integral da Bancada da Bala e do Agro.",
+        "budgetChangeModifier": 1.0,
+        "porkCost": 4.0,
+        "approvalChanceModifier": 60
+      }
+    ]
+  },
+  {
+    "id": "law_labor_flexibility",
+    "title": "Modernização Trabalhista e Desregulamentação de Contratos",
+    "category": "economic",
+    "description": "Flexibiliza acordos coletivos sobre a legislação geral, permite trabalho intermitente regulamentado e reduz encargos de contratação.",
+    "costPerYear": -2.0,
+    "originalCost": -2.0,
+    "popularityImpact": -6,
+    "economicImpactSummary": "Reduz o custo Brasil e estimula a contratação rápida de jovens e informais. Empresários +20%.",
+    "socialImpactSummary": "Sindicatos convocam paralisações contra a precarização das relações trabalhistas. Trabalhadores -18%.",
+    "judicialReviewRisk": 50,
+    "possibleAmendments": [
+      {
+        "id": "amend_lab_1",
+        "description": "Bancada Sindical: Cria contribuição assistencial facultativa para sustentar negociações sindicais de base.",
+        "impactSummary": "Acalma sindicatos moderados e reduz a chance de greve geral.",
+        "approvalChanceModifier": 40
+      }
+    ]
+  },
+  {
+    "id": "law_police_modernization",
+    "title": "Plano Integrado de Modernização Policial e Combate ao Crime",
+    "category": "security",
+    "description": "Aumenta o efetivo da Polícia Federal, unifica banco de dados balísticos e adquire viaturas blindadas e armamento moderno.",
+    "costPerYear": 6.0,
+    "originalCost": 6.0,
+    "popularityImpact": 12,
+    "economicImpactSummary": "Custo anual suportado pelo Tesouro, com retorno indireto na redução de perdas logísticas com roubos de carga.",
+    "socialImpactSummary": "Aumento substancial da sensação de segurança pública em regiões metropolitanas.",
+    "judicialReviewRisk": 5,
+    "possibleAmendments": [
+      {
+        "id": "amend_sec_1",
+        "description": "Emenda Garantista: Institui uso compulsório de câmeras corporais em uniformes e ouvidoria externa independente.",
+        "impactSummary": "Atrai apoio da oposição progressista e melhora a imagem dos direitos civis.",
+        "approvalChanceModifier": 30
+      }
+    ]
+  },
+  {
+    "id": "law_pension_reform",
+    "title": "Reforma da Previdência e Idade Mínima Progressiva",
+    "category": "economic",
+    "description": "Fixa idade mínima de aposentadoria em 65 anos para homens e 62 para mulheres, com regime de transição para estancar o rombo previdenciário.",
+    "costPerYear": -15.0,
+    "originalCost": -15.0,
+    "popularityImpact": -14,
+    "economicImpactSummary": "Gera economia projetada de R$ 60 bi em uma década, restaurando a sustentabilidade fiscal da União.",
+    "socialImpactSummary": "Provoca passeatas de servidores públicos e trabalhadores nas capitais; protestos generalizados.",
+    "judicialReviewRisk": 45,
+    "possibleAmendments": [
+      {
+        "id": "amend_prev_1",
+        "description": "Bancada Militar e Policial: Regra de transição suave e integralidade mantida para forças de segurança pública.",
+        "impactSummary": "Economia cai para -10 bi, mas garante a fidelidade das tropas e policiais ao governo.",
+        "budgetChangeModifier": 0.68,
+        "approvalChanceModifier": 50
+      }
+    ]
+  },
+  {
+    "id": "law_sanitation_framework",
+    "title": "Marco Legal do Saneamento Básico e Água Tratada",
+    "category": "infrastructure",
+    "description": "Abre o setor de água e esgoto para leilões e concessões privadas, fixando meta de 99% de atendimento de água potável até 2033.",
+    "costPerYear": -1.5,
+    "originalCost": -1.5,
+    "popularityImpact": 8,
+    "economicImpactSummary": "Destrava mais de R$ 35 bi em investimentos privados sem onerar o orçamento fiscal da União.",
+    "socialImpactSummary": "Erradica doenças de veiculação hídrica em periferias e cidades do interior.",
+    "judicialReviewRisk": 20,
+    "possibleAmendments": [
+      {
+        "id": "amend_san_1",
+        "description": "Exceção Regional: Mantém empresas estatais estaduais prioritárias em municípios com menos de 20 mil habitantes.",
+        "impactSummary": "Atenua oposição de governadores e prefeitos de regiões remotas.",
+        "approvalChanceModifier": 35
+      }
+    ]
+  },
+  {
+    "id": "law_green_energy",
+    "title": "Plano de Transição Ecológica e Mercado Regulado de Carbono",
+    "category": "social",
+    "description": "Cria créditos tributários para geração solar e eólica, fixa teto de emissões para a indústria pesada e pune o desmatamento ilegal.",
+    "costPerYear": 4.5,
+    "originalCost": 4.5,
+    "popularityImpact": 10,
+    "economicImpactSummary": "Atrai fundos sovereign internacionais ESG e investimentos em hidrogênio verde; Ambientalistas +25%.",
+    "socialImpactSummary": "Reduz poluição do ar e protege biomas ameaçados.",
+    "judicialReviewRisk": 15,
+    "possibleAmendments": [
+      {
+        "id": "amend_green_1",
+        "description": "Bancada Agropecuária: Exclui a produção de gado e grãos da obrigatoriedade do mercado de cotas de carbono.",
+        "impactSummary": "Agronegócio apoia a proposta em troca de neutralizar o setor primário.",
+        "approvalChanceModifier": 45
+      }
+    ]
+  },
+  {
+    "id": "law_privatization_pack",
+    "title": "Programa Nacional de Desestatização e Venda de Ativos",
+    "category": "economic",
+    "description": "Autoriza leilão em bolsa de participações acionárias da União em refinarias, distribuidoras de energia e empresas portuárias.",
+    "costPerYear": -12.0,
+    "originalCost": -12.0,
+    "popularityImpact": -5,
+    "economicImpactSummary": "Entrada extraordinária de R$ 25 bi em caixa para abatimento da dívida pública bruta.",
+    "socialImpactSummary": "Mercado Financeiro exulta (+22%); Sindicatos de estatais deflagram greve de advertência.",
+    "judicialReviewRisk": 40,
+    "possibleAmendments": [
+      {
+        "id": "amend_priv_1",
+        "description": "Golden Share: União mantém poder de veto em decisões estratégicas de segurança nacional da empresa.",
+        "impactSummary": "Tranquiliza setores nacionalistas e militares no Congresso.",
+        "approvalChanceModifier": 35
+      }
+    ]
+  },
+  {
+    "id": "law_anti_corruption_whistleblower",
+    "title": "Pacote Anticorrupção, Compliance e Proteção a Denunciantes",
+    "category": "security",
+    "description": "Criminaliza o enriquecimento ilícito de agentes públicos, amplia prazos de prescrição de fraudes a licitações e protege informantes confidenciais.",
+    "costPerYear": 1.2,
+    "originalCost": 1.2,
+    "popularityImpact": 16,
+    "economicImpactSummary": "Melhora a percepção internacional de segurança jurídica e atrai investimentos externos diretos.",
+    "socialImpactSummary": "Aprovação popular sobe expressivamente (+12%). Percepção de corrupção cai drasticamente.",
+    "judicialReviewRisk": 25,
+    "possibleAmendments": [
+      {
+        "id": "amend_anti_1",
+        "description": "Emenda do Centrão: Exige autorização judicial prévia para acordos de delação premiada e pune excessos de procuradores.",
+        "impactSummary": "Atenua o temor de parlamentares investigados e destrava a pauta na Câmara.",
+        "approvalChanceModifier": 50
+      }
+    ]
+  },
+  {
+    "id": "law_middle_class_tax_relief",
+    "title": "Isenção do Imposto de Renda para Salários até 5 Salários Mínimos",
+    "category": "economic",
+    "description": "Eleva a faixa de isenção da tabela progressiva do IRPF, desonerando a renda da classe média assalariada e pequenos profissionais.",
+    "costPerYear": 14.0,
+    "originalCost": 14.0,
+    "popularityImpact": 18,
+    "economicImpactSummary": "Injeta liquidez imediata no comércio e consumo; Classe Média +25%, mas amplia o déficit fiscal.",
+    "socialImpactSummary": "Aumento do poder de compra das famílias urbanas trabalhadoras.",
+    "judicialReviewRisk": 5,
+    "possibleAmendments": [
+      {
+        "id": "amend_tax_ir_1",
+        "description": "Compensação Fiscal: Cria alíquota de 15% sobre distribuição de lucros e dividendos a super-ricos para financiar a isenção.",
+        "impactSummary": "Custo fiscal líquido cai para zero; Empresários reclamam, mas contas públicas são preservadas.",
+        "budgetChangeModifier": 0.05,
+        "approvalChanceModifier": 40
+      }
+    ]
+  },
+  {
+    "id": "law_fake_news_regulation",
+    "title": "Marco Civil da Informação e Regulação de Plataformas Digitais",
+    "category": "political",
+    "description": "Obriga big techs a remover conteúdos criminosos, transparência algorítmica e responsabilização por impulsionamentos pagos.",
+    "costPerYear": 0.8,
+    "originalCost": 0.8,
+    "popularityImpact": 2,
+    "economicImpactSummary": "Cria taxa de fiscalização das plataformas digitais para financiar agência reguladora.",
+    "socialImpactSummary": "Intenso debate sobre liberdade de expressão nas redes versus contenção de ataques institucionais.",
+    "judicialReviewRisk": 55,
+    "possibleAmendments": [
+      {
+        "id": "amend_fake_1",
+        "description": "Imunidade Parlamentar Estendida: Protege formalmente discursos e manifestações de deputados e senadores nas redes.",
+        "impactSummary": "Garante votos de bancadas oposicionistas reticentes.",
+        "approvalChanceModifier": 45
+      }
+    ]
+  }
+]

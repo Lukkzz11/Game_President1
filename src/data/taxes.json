@@ -1,0 +1,163 @@
+[
+  {
+    "id": "tax_income",
+    "name": "Imposto de Renda Pessoa Física (IRPF)",
+    "description": "Tributação sobre salários e rendimentos individuais com alíquotas progressivas.",
+    "rate": 22.5,
+    "initialRate": 22.5,
+    "category": "income",
+    "revenue": 38.5,
+    "transmissionTips": {
+      "shortTermEffects": [
+        "Aumento da arrecadação direta no caixa do Tesouro",
+        "Redução imediata da renda disponível das famílias de classe média e alta",
+        "Desaceleração pontual nas vendas do comércio e serviços"
+      ],
+      "mediumTermEffects": [
+        "Potencial redução no índice de desigualdade (Gini) se for progressivo",
+        "Impacto na negociação de reajustes salariais junto aos sindicatos",
+        "Ajuste na poupança doméstica e depósitos bancários"
+      ],
+      "longTermEffects": [
+        "Risco de fuga de cérebros e evasão fiscal se a alíquota for excessiva",
+        "Fortalecimento sustentável do financiamento dos serviços públicos essenciais"
+      ],
+      "affectedVariables": ["Renda Disponível", "Consumo das Famílias", "Desigualdade (Gini)", "Arrecadação"],
+      "tradeOffSummary": "Equilibra justiça fiscal e arrecadação direta vs. poder de consumo imediato das famílias."
+    }
+  },
+  {
+    "id": "tax_corporate",
+    "name": "Imposto Corporativo / Empresas (IRPJ)",
+    "description": "Tributação sobre o lucro real e presumido das empresas e bancos.",
+    "rate": 25.0,
+    "initialRate": 25.0,
+    "category": "corporate",
+    "revenue": 28.0,
+    "transmissionTips": {
+      "shortTermEffects": [
+        "Redução de alíquota: queda imediata na arrecadação do governo",
+        "Aumento imediato do caixa livre e lucro líquido retido das empresas"
+      ],
+      "mediumTermEffects": [
+        "Estímulo ao investimento privado (Capex) se a confiança empresarial e a demanda estiverem aquecidas",
+        "Maior atratividade para atração de capital produtivo e novas plantas industriais",
+        "Risco de perda de arrecadação se as empresas preferirem apenas distribuir dividendos em vez de reinvestir"
+      ],
+      "longTermEffects": [
+        "Expansão da capacidade instalada da indústria e ganhos de produtividade",
+        "Aumento da arrecadação futura incidente sobre um PIB substancialmente maior"
+      ],
+      "affectedVariables": ["Lucro Empresarial", "Investimento Privado", "Competitividade", "Arrecadação", "Emprego"],
+      "tradeOffSummary": "Corta receita fiscal imediata na aposta de que o setor privado reinvestirá em novas fábricas e empregos."
+    }
+  },
+  {
+    "id": "tax_consumption",
+    "name": "Imposto sobre Consumo de Bens e Serviços",
+    "description": "Tributo incidente sobre a circulação de mercadorias, comércio e serviços diários.",
+    "rate": 21.0,
+    "initialRate": 21.0,
+    "category": "consumption",
+    "revenue": 52.0,
+    "transmissionTips": {
+      "shortTermEffects": [
+        "Repasse instantâneo aos preços finais nas prateleiras dos supermercados",
+        "Elevação direta da taxa de inflação (IPCA) acumulada",
+        "Arrecadação de base ampla e entrada imediata no caixa da União"
+      ],
+      "mediumTermEffects": [
+        "Contração no poder de compra das camadas de baixa renda (efeito regressivo)",
+        "Queda na demanda agregada e no faturamento do pequeno varejo",
+        "Redução da popularidade presidencial nas pesquisas"
+      ],
+      "longTermEffects": [
+        "Distorção na competitividade de cadeias produtivas extensas",
+        "Estímulo à informalidade na economia caso a tributação seja excessiva"
+      ],
+      "affectedVariables": ["Preço Final ao Consumidor", "Inflação (IPCA)", "Poder de Compra", "Arrecadação Bruta"],
+      "tradeOffSummary": "A maior e mais rápida fonte de receita da União, mas diretamente inflacionária e regressiva."
+    }
+  },
+  {
+    "id": "tax_fuel",
+    "name": "Imposto sobre Combustíveis e Energia",
+    "description": "Incidência direta na refinaria e distribuidoras sobre gasolina, diesel e eletricidade.",
+    "rate": 18.0,
+    "initialRate": 18.0,
+    "category": "fuel",
+    "revenue": 14.5,
+    "transmissionTips": {
+      "shortTermEffects": [
+        "Impacto em cadeia no frete rodoviário e nas tarifas de eletricidade",
+        "Aumento imediato do índice de preços ao produtor e da inflação geral",
+        "Forte arrecadação fiscal devido à inelasticidade da demanda por energia"
+      ],
+      "mediumTermEffects": [
+        "Aumento nos custos de produção da indústria pesada e do agronegócio",
+        "Risco de greve de caminhoneiros e protestos no setor de transportes",
+        "Piora na competitividade das exportações do interior do país"
+      ],
+      "longTermEffects": [
+        "Incentivo indireto à eficiência energética e transição para energias limpas",
+        "Reconfiguração da logística nacional de transporte de cargas"
+      ],
+      "affectedVariables": ["Custo de Logística & Frete", "Inflação", "Competitividade das Exportações", "Arrecadação"],
+      "tradeOffSummary": "Tributo de arrecadação garantida, mas com forte efeito dominó em todos os custos logísticos da nação."
+    }
+  },
+  {
+    "id": "tax_wealth",
+    "name": "Imposto sobre Grandes Fortunas e Patrimônio",
+    "description": "Tributação sobre grandes patrimônios imobiliários, veículos de luxo e heranças de alto valor.",
+    "rate": 2.5,
+    "initialRate": 2.5,
+    "category": "wealth",
+    "revenue": 4.2,
+    "transmissionTips": {
+      "shortTermEffects": [
+        "Forte ganho de popularidade entre trabalhadores e classes vulneráveis",
+        "Receita fiscal moderada mas altamente simbólica",
+        "Atrito imediato com entidades empresariais e mercado financeiro"
+      ],
+      "mediumTermEffects": [
+        "Risco de fuga de capitais para praças financeiras estrangeiras e paraísos fiscais",
+        "Retração nos investimentos em fundos imobiliários e ativos de alto padrão",
+        "Potencial melhora na redistribuição de renda e redução do índice de Gini"
+      ],
+      "longTermEffects": [
+        "Necessidade de forte aparato de compliance e cooperação internacional contra elisão",
+        "Estabilização de uma cultura de contribuição progressiva dos super-ricos"
+      ],
+      "affectedVariables": ["Confiança de Investidores", "Fuga de Capitais", "Desigualdade (Gini)", "Aprovação Popular"],
+      "tradeOffSummary": "Grande apelo distributivo e de justiça social vs. risco de fuga de capitais para o exterior."
+    }
+  },
+  {
+    "id": "tax_import",
+    "name": "Tarifa de Importação e Alfândega",
+    "description": "Tarifas protecionistas sobre produtos manufaturados e insumos vindos do exterior.",
+    "rate": 15.0,
+    "initialRate": 15.0,
+    "category": "import",
+    "revenue": 8.8,
+    "transmissionTips": {
+      "shortTermEffects": [
+        "Encarecimento imediato de bens de consumo e maquinários importados",
+        "Reserva de mercado e proteção para fabricantes industriais locais",
+        "Pressão inflacionária em produtos de alta tecnologia não produzidos no país"
+      ],
+      "mediumTermEffects": [
+        "Estímulo à substituição de importações e geração de empregos na indústria doméstica",
+        "Atritos diplomáticos e risco de tarifas retaliatórias de parceiros comerciais",
+        "Aumento no custo de modernização fabril para empresas que dependem de componentes externos"
+      ],
+      "longTermEffects": [
+        "Risco de acomodação de indústrias nacionais ineficientes e tecnologicamente defasadas",
+        "Consolidação de cadeias produtivas nacionais estratégicas em setores de defesa e maquinário"
+      ],
+      "affectedVariables": ["Proteção da Indústria Nacional", "Preço de Importados", "Relações Comerciais", "Inflação"],
+      "tradeOffSummary": "Protege os empregos e a indústria fabril local vs. encarece insumos e reduz a competitividade global."
+    }
+  }
+]

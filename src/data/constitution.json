@@ -1,0 +1,17 @@
+{
+  "name": "Constituição Cidadã da República",
+  "promulgationYear": 1988,
+  "governmentSystem": "presidential",
+  "presidentialTermYears": 4,
+  "reelectionLimit": 1,
+  "supremeCourtSeats": 11,
+  "supremeCourtRetirementAge": 75,
+  "supremeCourtAppointmentMethod": "presidential_nomination_congress_confirmation",
+  "supremeCourtConfirmationRequirement": "absolute_majority",
+  "centralBankIndependence": "autonomous",
+  "amendmentRequirement": {
+    "congressMajority": 0.6,
+    "stages": ["congress_vote", "supreme_court_review", "executive_sanction"]
+  },
+  "executiveDecreePower": "moderate"
+}

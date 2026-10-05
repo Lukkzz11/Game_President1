@@ -1,0 +1,72 @@
+[
+  {
+    "id": "agency_anen",
+    "name": "Agência Nacional de Energia",
+    "acronym": "ANEN",
+    "sector": "energy",
+    "autonomyLevel": "independent",
+    "rigorLevel": "balanced",
+    "directorName": "Dr. Fernando Siqueira",
+    "directorLoyalty": 60,
+    "marketConfidence": 82,
+    "regulatoryStability": 85,
+    "priceCapRule": "Teto tarifário indexado ao IPCA com revisão quadrienal de custos operacionais.",
+    "description": "Regula a geração, transmissão e distribuição de energia elétrica, equilibrando modicidade tarifária com atratividade para investimentos privados."
+  },
+  {
+    "id": "agency_antlog",
+    "name": "Agência Nacional de Transportes e Logística",
+    "acronym": "ANTLOG",
+    "sector": "transport",
+    "autonomyLevel": "shared",
+    "rigorLevel": "balanced",
+    "directorName": "Eng. Heloísa Drummond",
+    "directorLoyalty": 72,
+    "marketConfidence": 74,
+    "regulatoryStability": 76,
+    "priceCapRule": "Fiscalização de contratos de concessão rodoviária e livre pactuação de fretes ferroviários.",
+    "description": "Supervisiona as ferrovias, hidrovias, rodovias concessionadas e portos do país, fiscalizando cronogramas de duplicação e segurança."
+  },
+  {
+    "id": "agency_anatel",
+    "name": "Agência Nacional de Telecomunicações",
+    "acronym": "ANATEL",
+    "sector": "telecom",
+    "autonomyLevel": "independent",
+    "rigorLevel": "high",
+    "directorName": "Dr. Marcelo Castilho",
+    "directorLoyalty": 55,
+    "marketConfidence": 86,
+    "regulatoryStability": 88,
+    "priceCapRule": "Metas obrigatórias de universalização de banda larga 5G em escolas e postos de saúde.",
+    "description": "Garante a concorrência no mercado de telefonia, satélites e dados, impondo padrões rigorosos de qualidade e cobertura regional."
+  },
+  {
+    "id": "agency_ansal",
+    "name": "Agência Nacional de Saúde e Vigilância",
+    "acronym": "ANSAL",
+    "sector": "sanitation",
+    "autonomyLevel": "shared",
+    "rigorLevel": "high",
+    "directorName": "Dra. Cristina Nogueira",
+    "directorLoyalty": 68,
+    "marketConfidence": 78,
+    "regulatoryStability": 80,
+    "priceCapRule": "Normas sanitárias severas e metas compulsórias de abastecimento de água tratada.",
+    "description": "Regula a prestação de serviços de saneamento básico e saúde suplementar, prevenindo abusos contratuais e epidemias."
+  },
+  {
+    "id": "agency_cade_rep",
+    "name": "Conselho de Defesa da Concorrência da República",
+    "acronym": "CADE-Rep",
+    "sector": "banking",
+    "autonomyLevel": "independent",
+    "rigorLevel": "high",
+    "directorName": "Conselheiro Rogério Falcão",
+    "directorLoyalty": 50,
+    "marketConfidence": 90,
+    "regulatoryStability": 92,
+    "priceCapRule": "Veto a fusões com concentração acima de 40% de mercado e punição a carteis.",
+    "description": "Tribunal antitruste responsável por zelar pela livre concorrência, investigar cartéis industriais e aprovar grandes fusões corporativas."
+  }
+]

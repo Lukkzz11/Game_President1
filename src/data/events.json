@@ -1,0 +1,298 @@
+[
+  {
+    "id": "evt_cabinet_centrao_pressure",
+    "title": "Chantagem do Bloco de Centro (BCI) por Cargos e Emendas",
+    "category": "political",
+    "turn": 1,
+    "resolved": false,
+    "options": [
+      {
+        "id": "opt_cede_ministry_centrao",
+        "label": "Entregar o Ministério da Integração Regional e Liberar R$ 2,5 bi em Emendas",
+        "description": "Ceder ao pragmatismo político de Brasília. O BCI formaliza apoio, assegurando 95 votos automáticos na Câmara.",
+        "costs": { "money": 2.5, "popularity": -3 },
+        "consequences": {
+          "popularityChange": -4,
+          "congressSupportChange": 35,
+          "socialGroupApprovalChanges": { "civil_servants": -5, "middle_class": -6 },
+          "description": "O governo garante sólida governabilidade no Congresso, mas a imprensa e a classe média denunciam o loteamento de cargos públicos."
+        }
+      },
+      {
+        "id": "opt_refuse_centrao",
+        "label": "Rejeitar o Fisiologismo e Apelar à Opinião Pública",
+        "description": "Fazer um pronunciamento nacional denunciando o 'toma-lá-dá-cá' e tentar governar apenas com a bancada de princípios.",
+        "consequences": {
+          "popularityChange": 7,
+          "congressSupportChange": -40,
+          "socialGroupApprovalChanges": { "middle_class": 8, "students_youth": 6 },
+          "description": "O Presidente é ovacionado nas redes sociais por sua integridade moral, mas o Congresso entra em obstrução total e ameaça travar todas as votações."
+        }
+      },
+      {
+        "id": "opt_negotiate_republican",
+        "label": "Acordo Programático com Emendas Transparentes de Bancada",
+        "description": "Oferecer recursos orçamentários carimbados exclusivamente para obras de saúde e educação nos redutos eleitorais dos deputados.",
+        "consequences": {
+          "popularityChange": 2,
+          "congressSupportChange": 15,
+          "socialGroupApprovalChanges": { "low_income": 3 },
+          "description": "Conquista apoio parcial de deputados moderados do centro sem escândalos abertos, mas a oposição ainda mantém poder de chantagem."
+        }
+      }
+    ]
+  },
+  {
+    "id": "evt_truckers_strike",
+    "title": "Ameaça de Paralisação Geral dos Caminhoneiros",
+    "description": "Com o aumento continuado dos preços dos combustíveis e das tarifas de pedágio, as principais associações de transporte de carga anunciaram bloqueios em rodovias federais a partir da próxima semana se nenhuma providência for tomada.",
+    "category": "social",
+    "turn": 2,
+    "resolved": false,
+    "options": [
+      {
+        "id": "opt_concede_fuel_subsidy",
+        "label": "Conceder Subsídio Temporário ao Óleo Diesel",
+        "description": "Reduz o imposto sobre combustíveis e destina R$ 4,0 bi para amortecer os preços na bomba.",
+        "costs": { "money": 4.0, "popularity": 0 },
+        "consequences": {
+          "popularityChange": 6,
+          "inflationChange": -0.8,
+          "publicDebtChange": 0.9,
+          "socialGroupApprovalChanges": { "workers": 7, "agribusiness": 5, "business": -3 },
+          "description": "A paralisação é desmobilizada imediatamente, evitando desabastecimento nos supermercados, mas o déficit público sofre pressão."
+        }
+      },
+      {
+        "id": "opt_enforce_law",
+        "label": "Acionar a Força Nacional e Impor Multas Pesadas",
+        "description": "Determinar que a Polícia Federal garanta o fluxo de tráfego desobstruindo rodovias à força e multando sindicatos.",
+        "costs": { "popularity": -5, "congressSupport": 0 },
+        "consequences": {
+          "popularityChange": -7,
+          "inflationChange": 0.4,
+          "congressSupportChange": -15,
+          "socialGroupApprovalChanges": { "workers": -10, "business": 4 },
+          "description": "Clima de forte tensão política e confronto policial. As estradas são liberadas parcialmente, mas o governo sofre duras críticas dos trabalhadores."
+        }
+      },
+      {
+        "id": "opt_negotiate_table",
+        "label": "Mesa de Negociação e Tabela Mínima de Frete",
+        "description": "Receber líderes caminhoneiros no Palácio Presidencial e instituir uma mesa técnica para atualizar o piso regulatório do frete.",
+        "consequences": {
+          "popularityChange": 2,
+          "inflationChange": 0.2,
+          "congressSupportChange": 10,
+          "socialGroupApprovalChanges": { "agribusiness": -4, "workers": 4 },
+          "description": "Chega-se a um acordo intermediário. O setor produtivo reclama de custos logísticos, mas o país não para."
+        }
+      }
+    ]
+  },
+  {
+    "id": "evt_corruption_scandal",
+    "title": "Operação Lava-Jato: Investigação no Ministério da Infraestrutura",
+    "description": "Relatório sigiloso vazado pela imprensa revela indícios de desvio em licitações de rodovias federais envolvendo diretores do Ministério e empreiteiras aliadas ao governo.",
+    "category": "scandal",
+    "turn": 3,
+    "resolved": false,
+    "options": [
+      {
+        "id": "opt_fire_and_audit",
+        "label": "Demitir o Ministro Imediatamente e Abrir Auditoria Total",
+        "description": "Afastar toda a cúpula do órgão, convocar a Controladoria-Geral da União e cooperar irrestritamente com o Ministério Público.",
+        "consequences": {
+          "popularityChange": 5,
+          "congressSupportChange": -25,
+          "socialGroupApprovalChanges": { "middle_class": 6, "civil_servants": -3 },
+          "description": "A opinião pública elogia a postura enérgica e republicana, mas o partido aliado dono da indicação ministerial rompe com o governo no Congresso."
+        }
+      },
+      {
+        "id": "opt_shield_minister",
+        "label": "Blindar o Ministro e Declarar 'Perseguição da Oposição'",
+        "description": "Manter o ministro no cargo, alegar que as acusações são infundadas e orquestradas para desestabilizar as obras públicas.",
+        "consequences": {
+          "popularityChange": -14,
+          "congressSupportChange": 18,
+          "socialGroupApprovalChanges": { "middle_class": -12, "students_youth": -10 },
+          "description": "A base aliada se mantém unida e grata pela proteção, mas editoriais de todos os jornais condenam a conivência e a aprovação popular desaba."
+        }
+      }
+    ]
+  },
+  {
+    "id": "evt_central_bank_dilemma",
+    "title": "Banco Central Sinaliza Alta da Taxa de Juros para Conter Inflação",
+    "description": "Diante da persistência inflacionária de 12%, a diretoria autônoma do Banco Central convoca reunião e avisa que poderá elevar os juros básicos em 1,5 ponto percentual.",
+    "category": "economic",
+    "turn": 4,
+    "resolved": false,
+    "options": [
+      {
+        "id": "opt_support_bc",
+        "label": "Respeitar a Autonomia e Apoiar a Decisão Técnica",
+        "description": "Emitir nota oficial afirmando que a credibilidade monetária e o combate à inflação são prioridades soberanas do Estado.",
+        "consequences": {
+          "inflationChange": -1.2,
+          "gdpGrowthChange": -0.6,
+          "popularityChange": -3,
+          "socialGroupApprovalChanges": { "business": 5, "workers": -5 },
+          "description": "O mercado financeiro elogia a maturidade institucional, a inflação começa a ceder, mas o crédito mais caro desacelera as vendas no varejo."
+        }
+      },
+      {
+        "id": "opt_criticize_bc",
+        "label": "Discursar Contra os Juros Altos e Pressionar a Diretoria",
+        "description": "Criticar publicamente a política monetária agressiva como 'sabotagem ao crescimento e ao emprego do povo'.",
+        "consequences": {
+          "inflationChange": 0.6,
+          "gdpGrowthChange": 0.2,
+          "popularityChange": 6,
+          "congressSupportChange": -10,
+          "socialGroupApprovalChanges": { "workers": 6, "low_income": 5, "business": -8 },
+          "description": "Ganha simpatia de empresários do varejo e trabalhadores endividados, mas causa alta no câmbio, ruído nos juros futuros e queda na confiança de investidores."
+        }
+      }
+    ]
+  },
+  {
+    "id": "evt_supreme_court_clash",
+    "title": "Julgamento Histórico no Supremo Tribunal sobre Prerrogativas Fiscais",
+    "description": "A oposição protocolou Ação Direta de Inconstitucionalidade no STF para suspender decretos tributários do Executivo. Ministros garantistas e legalistas estão divididos em plenário.",
+    "category": "judicial",
+    "turn": 5,
+    "resolved": false,
+    "options": [
+      {
+        "id": "opt_respect_court",
+        "label": "Acórdão Judicial: Cumprir a Sentença e Buscar Acordo Legislativo",
+        "description": "Acatar a decisão da Corte Suprema e enviar projeto de lei complementar para sanar vício formal apontado pelo relator.",
+        "consequences": {
+          "popularityChange": 2,
+          "congressSupportChange": 10,
+          "socialGroupApprovalChanges": { "middle_class": 4 },
+          "description": "Fortalece o pacto democrático entre poderes e a estabilidade jurídica nacional, mantendo o respeito internacional."
+        }
+      },
+      {
+        "id": "opt_attack_court",
+        "label": "Questionar a Decisão e Acusar o STF de 'Ativismo Político'",
+        "description": "Criticar publicamente os ministros em pronunciamento à nação e apoiar Proposta de Emenda Constitucional para limitar poderes da Corte.",
+        "consequences": {
+          "popularityChange": -5,
+          "congressSupportChange": -20,
+          "socialGroupApprovalChanges": { "middle_class": -8, "business": -6 },
+          "description": "Desencadeia uma crise institucional sem precedentes. O Presidente da Suprema Corte suspende pautas do governo em represália."
+        }
+      }
+    ]
+  },
+  {
+    "id": "evt_international_trade_deal",
+    "title": "Oferta de Acordo de Livre Comércio com Bloco Internacional",
+    "description": "Potências estrangeiras oferecem tratado de isenção tarifária bilateral. O agronegócio e a mineração comemoram, mas indústrias nacionais temem falência pela competição externa.",
+    "category": "international",
+    "turn": 6,
+    "resolved": false,
+    "options": [
+      {
+        "id": "opt_sign_trade_deal",
+        "label": "Ratificar o Tratado de Livre Comércio Total",
+        "description": "Abrir o mercado nacional, zerando alíquotas de importação para bens manufaturados e abrindo exportações agrícolas.",
+        "consequences": {
+          "gdpGrowthChange": 0.8,
+          "inflationChange": -0.7,
+          "unemploymentChange": 0.4,
+          "socialGroupApprovalChanges": { "agribusiness": 15, "business": -12, "workers": -6 },
+          "description": "Boom de exportações agrícolas e preços mais baixos de eletrônicos no varejo, mas sindicatos industriais realizam protestos contra demissões no parque fabril."
+        }
+      },
+      {
+        "id": "opt_protect_industry",
+        "label": "Rejeitar o Acordo e Fortalecer Barreiras Protecionistas",
+        "description": "Priorizar o emprego industrial interno e subsidiar a produção de insumos tecnológicos nacionais.",
+        "consequences": {
+          "gdpGrowthChange": -0.3,
+          "inflationChange": 0.5,
+          "unemploymentChange": -0.6,
+          "socialGroupApprovalChanges": { "workers": 8, "agribusiness": -10, "business": 6 },
+          "description": "Preserva postos de trabalho metalúrgicos e têxteis, mas o agronegócio perde mercados internacionais e a inflação interna sobe."
+        }
+      }
+    ]
+  },
+  {
+    "id": "evt_climate_disaster",
+    "title": "Seca Histórica e Emergência Energética Nacional",
+    "description": "A pior estiagem em 40 anos reduziu o nível das represas hidroelétricas a níveis críticos. Operadores do sistema elétrico recomendam racionamento emergencial ou acionamento de termoelétricas caras.",
+    "category": "social",
+    "turn": 7,
+    "resolved": false,
+    "options": [
+      {
+        "id": "opt_thermal_power",
+        "label": "Acionar Termoelétricas e Bancar Custo com Tesouro Nacional",
+        "description": "Gastar R$ 5,0 bi para evitar apagões no parque industrial, assumindo o rombo no orçamento federal.",
+        "costs": { "money": 5.0 },
+        "consequences": {
+          "publicDebtChange": 1.2,
+          "gdpGrowthChange": 0.1,
+          "popularityChange": 2,
+          "socialGroupApprovalChanges": { "business": 6, "workers": 2 },
+          "description": "A indústria continua produzindo normalmente e as luzes permanecem acesas, mas as contas fiscais se deterioram gravemente."
+        }
+      },
+      {
+        "id": "opt_energy_rationing",
+        "label": "Decretar Racionamento de Energia e Meta de Corte de 15%",
+        "description": "Instituir sobretaxa em bandeiras tarifárias para forçar queda de consumo pela população e indústrias.",
+        "consequences": {
+          "inflationChange": 1.1,
+          "gdpGrowthChange": -1.0,
+          "popularityChange": -12,
+          "socialGroupApprovalChanges": { "middle_class": -10, "workers": -8, "business": -8 },
+          "description": "O caixa do governo é preservado, mas a inflação das tarifas revolta a classe trabalhadora e as fábricas reduzem turnos."
+        }
+      }
+    ]
+  },
+  {
+    "id": "evt_election_year_pressure",
+    "title": "Reta Final de Mandato: Pressão Eleitoral por Pacote Populista",
+    "description": "Com as eleições gerais a 6 meses de distância, líderes partidários da base aliada imploram por um 'Pacotão de Obras e Bônus Social' para turbinar as campanhas eleitorais dos deputados.",
+    "category": "political",
+    "turn": 8,
+    "resolved": false,
+    "options": [
+      {
+        "id": "opt_election_package",
+        "label": "Aprovar o Pacotão Eleitoral de Bondades (R$ 8.0 bi)",
+        "description": "Liberar bônus a servidores, vale-gás dobrado e inaugurar obras às pressas para maximizar chances eleitorais.",
+        "costs": { "money": 8.0 },
+        "consequences": {
+          "popularityChange": 14,
+          "publicDebtChange": 2.2,
+          "inflationChange": 0.8,
+          "congressSupportChange": 30,
+          "socialGroupApprovalChanges": { "low_income": 12, "civil_servants": 10, "business": -6 },
+          "description": "A aprovação do governo explode nas vésperas da votação, garantindo palanques vibrantes, mas economistas alertam para uma ressaca fiscal violenta no próximo ciclo."
+        }
+      },
+      {
+        "id": "opt_maintain_sobriety",
+        "label": "Manter a Rigidez Fiscal e Deixar Legado Republicano",
+        "description": "Vetar qualquer despesa sem previsão orçamentária e apostar na mensagem de responsabilidade e estadismo.",
+        "consequences": {
+          "popularityChange": -5,
+          "inflationChange": -0.6,
+          "publicDebtChange": -0.8,
+          "congressSupportChange": -20,
+          "socialGroupApprovalChanges": { "business": 10, "middle_class": 4, "low_income": -6 },
+          "description": "Os mercados e historiadores saúdam a coragem cívica do Presidente, mas muitos candidatos da base aliada perdem eleições reclamando da falta de verbas."
+        }
+      }
+    ]
+  }
+]

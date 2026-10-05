@@ -1,0 +1,818 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Strategy Game Light Theme (Democracy 4 inspired) */
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-card-subtle: #f8fafc;
+  --bg-input: #ffffff;
+  
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-accent: #3b82f6;
+  --border-gold: #d97706;
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  --accent-blue: #2563eb;
+  --accent-cyan: #0284c7;
+  --accent-gold: #d97706;
+  --accent-gold-glow: rgba(217, 119, 6, 0.15);
+  --accent-emerald: #059669;
+  --accent-crimson: #dc2626;
+  --accent-purple: #7c3aed;
+
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-title: 'Cinzel', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  --shadow-card: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.03), 0 0 0 1px #e2e8f0;
+  --shadow-card-hover: 0 10px 25px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.04), 0 0 0 1px #cbd5e1;
+  --shadow-gold: 0 4px 20px rgba(217, 119, 6, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  background-image: 
+    linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Typography Utilities */
+.font-title {
+  font-family: var(--font-title);
+  letter-spacing: 0.03em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Panels */
+.glass-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.glass-panel-gold {
+  background: linear-gradient(135deg, #fffbeb, #ffffff);
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.1);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.88rem;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.btn-gold {
+  background: #d97706;
+  color: #ffffff;
+  border: 1px solid #b45309;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25);
+}
+
+.btn-gold:hover {
+  background: #b45309;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+}
+
+.btn-emerald {
+  background: #059669;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+}
+
+.btn-emerald:hover {
+  background: #047857;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.25);
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+}
+
+.btn-secondary {
+  background: #f1f5f9;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+  border-color: var(--border-strong);
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-outline:hover {
+  background: #f8fafc;
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-blue {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.badge-emerald {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.badge-crimson {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.badge-gold {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.badge-purple {
+  background: #f5f3ff;
+  color: #6d28d9;
+  border: 1px solid #ddd6fe;
+}
+
+/* Inputs & Form Elements */
+.input-text, .input-select, .input-textarea {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input-text:focus, .input-select:focus, .input-textarea:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Custom Slider */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  outline: none;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
+  transition: transform 0.1s ease;
+}
+
+.range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #1d4ed8;
+}
+
+/* Progress bars */
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease-out;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(217, 119, 6, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(217, 119, 6, 0.45); }
+}
+
+.pulse-gold {
+  animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.25rem;
+}
+
+/* Breaking News Ticker (Chyron) */
+.ticker-container {
+  background: #0f172a;
+  border-bottom: 2px solid #d97706;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 38px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+}
+
+.ticker-badge {
+  background: #dc2626;
+  color: #ffffff;
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 2;
+  white-space: nowrap;
+  box-shadow: 2px 0 8px rgba(220, 38, 38, 0.3);
+}
+
+.ticker-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 3rem;
+  padding-left: 1.5rem;
+  animation: tickerSlide 45s linear infinite;
+  font-size: 0.82rem;
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+.ticker-container:hover .ticker-content {
+  animation-play-state: paused;
+}
+
+@keyframes tickerSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Authentic Newspaper Frontpage Styling */
+.newspaper-card {
+  background: #fffdfa;
+  color: #1a1a1a;
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2d9cf;
+  position: relative;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newspaper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.newspaper-masthead {
+  border-bottom: 2px solid #1a1a1a;
+  border-top: 2px solid #1a1a1a;
+  padding: 0.35rem 0;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.newspaper-title {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #111827;
+  line-height: 1.1;
+}
+
+.newspaper-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #555;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.85rem;
+  font-family: var(--font-mono);
+}
+
+.newspaper-headline {
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.newspaper-body {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #334155;
+  text-align: justify;
+}
+
+/* Urgent Crisis Popup Modal (Suzerain / Democracy style) */
+.crisis-modal {
+  background: #ffffff;
+  border: 1.5px solid #dc2626;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 36px -10px rgba(220, 38, 38, 0.25), 0 0 0 1px #fecaca;
+  max-width: 620px;
+  width: 100%;
+  max-height: calc(100vh - 2.5rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  animation: crisisPopup 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes crisisPopup {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.crisis-alert-banner {
+  background: linear-gradient(90deg, #b91c1c, #dc2626);
+  padding: 0.55rem 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  font-family: var(--font-title);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.crisis-modal-body {
+  padding: 0.85rem 1.15rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.crisis-modal-footer {
+  padding: 0.65rem 1.15rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.pulse-red {
+  animation: pulseRedAlert 1.8s infinite;
+}
+
+@keyframes pulseRedAlert {
+  0%, 100% { box-shadow: 0 0 12px rgba(220, 38, 38, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.6); }
+}
+
+.crisis-choice-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.crisis-choice-card:hover {
+  background: #f8fafc;
+  border-color: var(--accent-gold);
+  transform: translateX(2px);
+  box-shadow: -3px 0 0 var(--accent-gold), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Rubber Stamp Badges */
+.stamp-sanctioned {
+  display: inline-block;
+  color: #059669;
+  border: 2px solid #059669;
+  padding: 0.2rem 0.6rem;
+  font-family: var(--font-title);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  transform: rotate(-3deg);
+  background: rgba(5, 150, 105, 0.05);
+}
+
+.stamp-vetoed {
+  display: inline-block;
+  color: #dc2626;
+  border: 2px solid #dc2626;
+  padding: 0.2rem 0.6rem;
+  font-family: var(--font-title);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  transform: rotate(4deg);
+  background: rgba(220, 38, 38, 0.05);
+}
+
+.stamp-rider {
+  display: inline-block;
+  color: #d97706;
+  border: 2px dashed #d97706;
+  padding: 0.2rem 0.6rem;
+  font-family: var(--font-main);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  background: rgba(217, 119, 6, 0.05);
+}
+
+/* Live Trade-Off Indicators */
+.tradeoff-gain {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #047857;
+  background: #ecfdf5;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid #a7f3d0;
+}
+
+.tradeoff-loss {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #b91c1c;
+  background: #fef2f2;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid #fecaca;
+}
+
+/* Democracy 4 Style Policy & Status Gauges */
+.stat-gauge {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.stat-gauge:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* =====================================================================
+   SIMULADOR POLÍTICO - RENDERIZAÇÃO NATIVA & ANIMAÇÕES
+   ===================================================================== */
+
+@keyframes pulseUrgent {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5); }
+  50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.urgent-pulse {
+  animation: pulseUrgent 2s infinite ease-in-out;
+}
+
+@keyframes seatFlip {
+  0% { transform: scale(0.6) rotate(-15deg); opacity: 0.3; }
+  60% { transform: scale(1.3) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.seat-vote-flip {
+  animation: seatFlip 0.35s ease-out forwards;
+}
+
+@keyframes gavelStrike {
+  0% { transform: rotate(0deg); }
+  35% { transform: rotate(-35deg); }
+  70% { transform: rotate(15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.gavel-animated {
+  display: inline-block;
+  transform-origin: bottom right;
+  animation: gavelStrike 0.6s ease-in-out;
+}
+
+/* Plenário e Assentos do Congresso */
+.plenary-seat {
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.plenary-seat:hover {
+  transform: scale(1.6);
+  filter: brightness(1.2);
+  stroke: #0f172a;
+  stroke-width: 1.5px;
+}
+
+/* Mapa 2D SVG Interativo */
+.svg-map-region {
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.svg-map-region:hover {
+  filter: brightness(1.12) drop-shadow(0 4px 12px rgba(15, 23, 42, 0.18));
+  stroke: #1e293b !important;
+  stroke-width: 2.5px !important;
+}
+
+.svg-map-region.active-region {
+  stroke: #2563eb !important;
+  stroke-width: 3.5px !important;
+  filter: drop-shadow(0 6px 16px rgba(37, 99, 235, 0.25));
+}
+
+/* Estilo Jornal Impresso / Gazeta Nacional */
+.newspaper-paper {
+  background: #fdfbf7;
+  color: #1c1917;
+  border: 1px solid #d6d3d1;
+  box-shadow: 0 4px 20px rgba(28, 25, 23, 0.08);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.newspaper-masthead {
+  border-top: 3px double #1c1917;
+  border-bottom: 3px double #1c1917;
+  padding: 0.75rem 0;
+  text-align: center;
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+.newspaper-column {
+  column-gap: 1.5rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Interactive Leaflet Map Cartography Styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #0f172a;
+  font-family: var(--font-main);
+  outline: none;
+}
+
+.custom-map-tooltip {
+  background: rgba(15, 23, 42, 0.92) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+  font-size: 0.82rem !important;
+}
+
+.custom-map-tooltip::before {
+  border-top-color: rgba(15, 23, 42, 0.92) !important;
+}
+
+.capital-pulse-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.capital-pulse-marker .beacon-pulse {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.4);
+  animation: capitalPulse 2s infinite ease-out;
+}
+
+@keyframes capitalPulse {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.capital-pulse-marker .marker-star {
+  font-size: 1.25rem;
+  z-index: 2;
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.8));
+}
+
+.capital-pulse-marker .marker-label {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: rgba(15, 23, 42, 0.9);
+  color: #fef08a;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(245, 158, 11, 0.6);
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.city-dot-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.city-dot-marker .dot-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38bdf8;
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
+}
+
+.city-dot-marker .city-label {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: rgba(15, 23, 42, 0.85);
+  color: #e2e8f0;
+  font-weight: 600;
+  font-size: 0.68rem;
+  padding: 1px 5px;
+  border-radius: 3px;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+

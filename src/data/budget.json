@@ -1,0 +1,93 @@
+{
+  "totalRevenue": 146.0,
+  "totalSpending": 155.5,
+  "primaryBalance": 7.0,
+  "nominalBalance": -9.5,
+  "debtInterestCost": 16.5,
+  "categories": [
+    {
+      "id": "health",
+      "name": "Saúde Pública e Hospitais",
+      "description": "Rede hospitalar federal, compra de insumos, vacinas e repasses ao sistema básico de saúde.",
+      "amount": 22.5,
+      "percentOfTotal": 14.5
+    },
+    {
+      "id": "education",
+      "name": "Educação Básica e Superior",
+      "description": "Universidades federais, bolsas de pesquisa, formação docente e merenda escolar.",
+      "amount": 21.0,
+      "percentOfTotal": 13.5
+    },
+    {
+      "id": "security",
+      "name": "Segurança Pública e Polícia Federal",
+      "description": "Aparelhamento das forças de segurança, presídios federais, inteligência e combate a facções.",
+      "amount": 15.0,
+      "percentOfTotal": 9.6
+    },
+    {
+      "id": "defense",
+      "name": "Defesa Nacional e Forças Armadas",
+      "description": "Custos operacionais do Exército, Marinha, Aeronáutica e projetos estratégicos de soberania.",
+      "amount": 11.5,
+      "percentOfTotal": 7.4
+    },
+    {
+      "id": "infrastructure",
+      "name": "Infraestrutura e Obras Estratégicas",
+      "description": "Construção e manutenção de rodovias, ferrovias, dragagem de portos e linhas de transmissão.",
+      "amount": 12.0,
+      "percentOfTotal": 7.7
+    },
+    {
+      "id": "social_welfare",
+      "name": "Assistência Social e Transferência de Renda",
+      "description": "Programas contra extrema pobreza, auxílios emergenciais e amparo a famílias desassistidas.",
+      "amount": 19.0,
+      "percentOfTotal": 12.2
+    },
+    {
+      "id": "science",
+      "name": "Ciência, Inovação e Tecnologia",
+      "description": "Financiamento de laboratórios, biotecnologia, inteligência artificial e centros de pesquisa.",
+      "amount": 4.5,
+      "percentOfTotal": 2.9
+    },
+    {
+      "id": "transport",
+      "name": "Transporte Urbano e Logística",
+      "description": "Subsídios ao transporte coletivo, mobilidade nas metrópoles e corredores de escoamento de grãos.",
+      "amount": 6.5,
+      "percentOfTotal": 4.2
+    },
+    {
+      "id": "environment",
+      "name": "Meio Ambiente e Recursos Hídricos",
+      "description": "Fiscalização ambiental, combate ao desmatamento, proteção de mananciais e parques ecológicos.",
+      "amount": 3.2,
+      "percentOfTotal": 2.1
+    },
+    {
+      "id": "agriculture",
+      "name": "Agricultura e Abastecimento",
+      "description": "Subsídio a seguro de safras, armazenagem de estoques reguladores e assistência à agricultura familiar.",
+      "amount": 5.8,
+      "percentOfTotal": 3.7
+    },
+    {
+      "id": "industry",
+      "name": "Indústria, Inovação e Comércio",
+      "description": "Apoio à manufatura nacional, incentivo a semicondutores e feiras de exportação internacional.",
+      "amount": 4.0,
+      "percentOfTotal": 2.6
+    },
+    {
+      "id": "administration",
+      "name": "Administração Pública Geral e Tribunais",
+      "description": "Folha de pagamento da máquina pública, fiscalização fazendária e custeio dos prédios públicos.",
+      "amount": 14.0,
+      "percentOfTotal": 9.0
+    }
+  ]
+}

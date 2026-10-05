@@ -1,0 +1,79 @@
+[
+  {
+    "id": "workers",
+    "name": "Trabalhadores da Indústria e Serviços",
+    "description": "Base produtiva urbana do país, sensível ao salário mínimo, inflação de alimentos e direitos laborais.",
+    "populationShare": 28,
+    "averageIncome": 45,
+    "approval": 30,
+    "influence": 65,
+    "keyInterests": ["Salários dignos", "Estabilidade no emprego", "Transporte e saúde acessíveis"],
+    "ideologicalLean": { "marketVsState": -40, "socialSpending": 60, "taxes": 30 }
+  },
+  {
+    "id": "business",
+    "name": "Empresários e Investidores",
+    "description": "Lideranças do setor corporativo, comércio e indústrias, buscam segurança jurídica e alívio tributário.",
+    "populationShare": 5,
+    "averageIncome": 95,
+    "approval": 32,
+    "influence": 85,
+    "keyInterests": ["Corte de impostos corporativos", "Desregulamentação", "Disciplina fiscal"],
+    "ideologicalLean": { "marketVsState": 80, "taxes": -85, "regulation": -75 }
+  },
+  {
+    "id": "middle_class",
+    "name": "Classe Média Urbana",
+    "description": "Famílias de profissionais e pequenos comerciantes, sofrem com a inflação e cobram serviços de qualidade.",
+    "populationShare": 22,
+    "averageIncome": 60,
+    "approval": 28,
+    "influence": 60,
+    "keyInterests": ["Controle da inflação", "Segurança pública", "Qualidade na educação e saúde"],
+    "ideologicalLean": { "taxes": -40, "civilLiberties": 10, "socialSpending": 20 }
+  },
+  {
+    "id": "low_income",
+    "name": "População de Baixa Renda e Vulneráveis",
+    "description": "Milhões dependentes de transferências sociais, serviços básicos do Estado e empregos informais.",
+    "populationShare": 20,
+    "averageIncome": 15,
+    "approval": 35,
+    "influence": 40,
+    "keyInterests": ["Auxílio social de renda", "Alimentos baratos", "Hospitais públicos funcionais"],
+    "ideologicalLean": { "socialSpending": 95, "marketVsState": -60 }
+  },
+  {
+    "id": "agribusiness",
+    "name": "Produtores Rurais e Agronegócio",
+    "description": "Grande e média agricultura no interior, motor das exportações do país e donos de forte bancada.",
+    "populationShare": 7,
+    "averageIncome": 75,
+    "approval": 34,
+    "influence": 80,
+    "keyInterests": ["Crédito rural acessível", "Infraestrutura rodoviária e portuária", "Segurança no campo"],
+    "ideologicalLean": { "socialValues": -60, "marketVsState": 40, "trade": 40 }
+  },
+  {
+    "id": "civil_servants",
+    "name": "Servidores Públicos",
+    "description": "Funcionários federais, estaduais e municipais, defensores da estabilidade e do papel do Estado.",
+    "populationShare": 6,
+    "averageIncome": 70,
+    "approval": 33,
+    "influence": 65,
+    "keyInterests": ["Reajustes salariais", "Previdência protegida", "Orçamento para órgãos públicos"],
+    "ideologicalLean": { "stateSize": 80, "marketVsState": -50, "taxes": 50 }
+  },
+  {
+    "id": "students_youth",
+    "name": "Jovens e Estudantes",
+    "description": "Geração conectada preocupada com empregabilidade, custo universitário, meio ambiente e liberdades.",
+    "populationShare": 12,
+    "averageIncome": 30,
+    "approval": 26,
+    "influence": 45,
+    "keyInterests": ["Educação superior e tecnológica", "Emprego para recém-formados", "Cultura e sustentabilidade"],
+    "ideologicalLean": { "socialValues": 80, "civilLiberties": 75, "socialSpending": 70 }
+  }
+]
