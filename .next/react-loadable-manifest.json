@@ -1,26 +1,20 @@
 {
-  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
-    "id": 5139,
+  "..\\node_modules\\next\\dist\\client\\dev\\hot-reloader\\app\\use-websocket.js -> @vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts": {
+    "id": "..\\node_modules\\next\\dist\\client\\dev\\hot-reloader\\app\\use-websocket.js -> @vercel/turbopack-ecmascript-runtime/browser/dev/hmr-client/hmr-client.ts",
     "files": [
-      "static/chunks/139.7a5a8e93a21948c1.js"
-    ]
-  },
-  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error": {
-    "id": 1646,
-    "files": [
-      "static/chunks/646.f342b7cffc01feb0.js"
+      "static/chunks/_app-pages-browser_node_modules_next_dist_client_dev_noop-turbopack-hmr_js.js"
     ]
   },
   "components\\map\\MapTab.tsx -> @/components/map/ProfessionalGeoMap": {
-    "id": 2335,
+    "id": "components\\map\\MapTab.tsx -> @/components/map/ProfessionalGeoMap",
     "files": [
-      "static/chunks/335.af61e69591454b56.js"
+      "static/chunks/_app-pages-browser_src_components_map_ProfessionalGeoMap_tsx.js"
     ]
   },
   "components\\map\\ProfessionalGeoMap.tsx -> leaflet": {
-    "id": 5027,
+    "id": "components\\map\\ProfessionalGeoMap.tsx -> leaflet",
     "files": [
-      "static/chunks/d0deef33.cac6acee3fffe7af.js"
+      "static/chunks/_app-pages-browser_node_modules_leaflet_dist_leaflet-src_js.js"
     ]
   }
 }
